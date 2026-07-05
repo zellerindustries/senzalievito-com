@@ -18,10 +18,6 @@
   padding: var(--spacing-sm);
   box-sizing: border-box;
 
-  -webkit-backdrop-filter: var(--backdrop-filter);
-  backdrop-filter: var(--backdrop-filter);
-  background: var(--header-bg);
-
   border: 1px solid var(--border-glass);
   border-radius: var(--radius-md);
 
@@ -29,6 +25,32 @@
      altrimenti rompe il menu a schermo intero su mobile */
 
   z-index: 1000;
+
+  /* NOTA: isolation: isolate, animation, transform e will-change per
+     #site-header sono già gestiti/neutralizzati in .liquid-glass.css
+     (regola #site-header.liquid-glass) per evitare che l'header
+     diventi un "containing block" che intrappola il nav mobile
+     position:fixed al suo interno. Non ridichiarare quelle proprietà
+     qui per evitare regole doppie/contrastanti. */
+}
+
+/* Blur + sfondo dell'header, applicati sullo STESSO ::before che
+   .liquid-glass usa già per il riflesso vetro (un elemento ha un solo
+   ::before). Le due gradient sono impilate come layer multipli così
+   nessuna delle due sovrascrive l'altra. IMPORTANTE: backdrop-filter
+   resta qui sul pseudo-elemento e MAI su #site-header stesso, altrimenti
+   torna il bug del menu che segue l'header invece del viewport. */
+#site-header::before {
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.12),
+      rgba(255, 255, 255, 0.05)
+    ),
+    var(--header-bg);
+
+  -webkit-backdrop-filter: var(--backdrop-filter);
+  backdrop-filter: var(--backdrop-filter);
 }
 
 /* Nav Desktop */
@@ -97,8 +119,6 @@
     height: 100vh;
 
     background: var(--header-bg);
-    -webkit-backdrop-filter: blur(20px);
-    backdrop-filter: blur(20px);
 
     display: flex;
     flex-direction: column;
@@ -108,20 +128,22 @@
       --spacing-lg
     ); /* FIXED: Spaziatura verticale più generosa su mobile */
 
-    will-change: transform, visibility;
-    transform: translateX(100%);
+    opacity: 0;
+    pointer-events: none;
+    visibility: hidden;
+    will-change: opacity, visibility;
 
     transition:
-      transform 0.4s cubic-bezier(0.77, 0, 0.175, 1),
-      visibility 0.4s;
-    visibility: hidden;
+      opacity 0.4s ease,
+      visibility 0.4s ease;
 
     z-index: 9999;
   }
 
   /* Stato Nav Attiva */
   #site-header nav.is-active {
-    transform: translateX(0);
+    opacity: 1;
+    pointer-events: auto;
     visibility: visible;
   }
 
@@ -197,4 +219,10 @@
   opacity: 1;
   visibility: visible;
   pointer-events: auto;
+}
+
+body.no-scroll {
+  overflow: hidden;
+  touch-action: none;
+  overscroll-behavior: none;
 }
