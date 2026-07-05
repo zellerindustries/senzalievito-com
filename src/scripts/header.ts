@@ -9,6 +9,8 @@ export function initHeaderNavigation(): void {
     "menu-overlay",
   ) as HTMLElement | null;
 
+  const menuToggleIcon = menuToggle?.querySelector("i") as HTMLElement | null;
+
   const navLinks = document.querySelectorAll(
     ".header-nav .btn",
   ) as NodeListOf<HTMLAnchorElement>;
@@ -29,6 +31,9 @@ export function initHeaderNavigation(): void {
     document.body.classList.remove("no-scroll");
 
     menuOverlay?.classList.remove("is-active");
+
+    menuToggleIcon?.classList.remove("bi-x");
+    menuToggleIcon?.classList.add("bi-list");
   };
 
   const openMenu = (): void => {
@@ -43,6 +48,9 @@ export function initHeaderNavigation(): void {
     document.body.classList.add("no-scroll");
 
     menuOverlay?.classList.add("is-active");
+
+    menuToggleIcon?.classList.remove("bi-list");
+    menuToggleIcon?.classList.add("bi-x");
   };
 
   // Mobile menu
