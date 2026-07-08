@@ -1,5 +1,6 @@
 import { applyAriaFallback } from "./scripts/accessibility";
 import { initFlipBoxes } from "./scripts/flip-cards";
+import { initForm } from "./scripts/form";
 import { initHeaderNavigation } from "./scripts/header";
 import { initImageFallback } from "./scripts/image-fallback";
 import { initSmoothScroll } from "./scripts/smooth-scroll";
@@ -30,3 +31,5 @@ initImageFallback({
 /* ============================= */
 
 initSmoothScroll();
+
+initForm();
