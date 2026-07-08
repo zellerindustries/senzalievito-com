@@ -15,6 +15,7 @@ interface ContactFormData {
   email: string;
   subject: string;
   message: string;
+  privacy: boolean;
   "bot-field": string;
   submission_speed: number;
 }
@@ -63,12 +64,22 @@ export function initForm(): void {
   const messageField = contactForm.querySelector(
     "#message",
   ) as HTMLTextAreaElement | null;
+  const privacyField = contactForm.querySelector(
+    "#privacy",
+  ) as HTMLInputElement | null;
 
-  if (!nameField || !emailField || !subjectField || !messageField) {
+  if (
+    !nameField ||
+    !emailField ||
+    !subjectField ||
+    !messageField ||
+    !privacyField
+  ) {
     console.warn("Contact form fields not found — script will not initialize.");
     return;
   }
 
+  // Text/select fields validated via .value — checkbox handled separately via .checked
   const fields = {
     name: nameField,
     email: emailField,
@@ -156,8 +167,11 @@ export function initForm(): void {
   const isFieldValid = (name: keyof typeof fields) =>
     !validators[name](fields[name].value.trim());
 
+  const isPrivacyValid = () => privacyField.checked;
+
   const isFormValid = () =>
-    Object.keys(fields).every((k) => isFieldValid(k as keyof typeof fields));
+    Object.keys(fields).every((k) => isFieldValid(k as keyof typeof fields)) &&
+    isPrivacyValid();
 
   const validateFieldUI = (name: keyof typeof fields) => {
     const field = fields[name];
@@ -170,8 +184,25 @@ export function initForm(): void {
     return true;
   };
 
-  const validateFormUI = () =>
-    Object.keys(fields).every((k) => validateFieldUI(k as keyof typeof fields));
+  const validatePrivacyUI = () => {
+    if (!privacyField.checked) {
+      setFieldError(
+        privacyField,
+        "Devi accettare la Privacy Policy per continuare.",
+      );
+      return false;
+    }
+    clearFieldError(privacyField);
+    return true;
+  };
+
+  const validateFormUI = () => {
+    const fieldsValid = Object.keys(fields).every((k) =>
+      validateFieldUI(k as keyof typeof fields),
+    );
+    const privacyValid = validatePrivacyUI();
+    return fieldsValid && privacyValid;
+  };
 
   /**
    * Debounce
@@ -257,6 +288,7 @@ export function initForm(): void {
   const resetFormUI = () => {
     contactForm.reset();
     Object.values(fields).forEach(clearFieldError);
+    clearFieldError(privacyField);
     updateCounter();
   };
 
@@ -308,6 +340,7 @@ export function initForm(): void {
       email: fields.email.value.trim(),
       subject: fields.subject.value,
       message: sanitize(fields.message.value.trim()),
+      privacy: privacyField.checked,
       "bot-field": "",
       submission_speed: timeToFill,
     };
@@ -365,6 +398,19 @@ export function initForm(): void {
     field.addEventListener("blur", () => {
       validateFieldUI(key as keyof typeof fields);
     });
+  });
+
+  // Checkbox needs its own listener since it's not part of `fields`
+  // (change fires reliably for checkboxes across browsers; input also works but change is conventional)
+  privacyField.addEventListener("change", () => {
+    debouncedUpdate();
+    // Only show an error once the user has actually interacted and unchecked it;
+    // don't nag them before they've had a chance to check it.
+    if (!privacyField.checked) {
+      validatePrivacyUI();
+    } else {
+      clearFieldError(privacyField);
+    }
   });
 
   /**
