@@ -121,7 +121,6 @@
         </a>
       </nav>
     </header>
-    <div id="menu-overlay"></div>
 
     <!-- Main Content -->
     <main>
@@ -379,7 +378,11 @@
             <ul class="stack">
               <li><a href="/">Home</a></li>
               <li><a href="/servizi">Servizi</a></li>
-              <li><a href="/contatti">Contatti</a></li>
+              <li>
+                <a href="/contatti" aria-current="page" aria-disabled="true"
+                  >Contatti</a
+                >
+              </li>
             </ul>
           </nav>
         </div>
@@ -388,8 +391,9 @@
           <h4>Politiche e info</h4>
           <nav aria-label="Footer menu legale">
             <ul class="stack">
-              <li><a href="/privacy">Privacy Policy</a></li>
-              <li><a href="/cookie">Cookie Policy</a></li>
+              <li><a href="/legal/privacy">Privacy Policy</a></li>
+              <li><a href="/legal/cookie">Cookie Policy</a></li>
+              <li><a href="/legal/terms"> Termini e Condizioni</a></li>
             </ul>
           </nav>
         </div>

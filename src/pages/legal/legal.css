@@ -1,0 +1,337 @@
+/* =========================================================
+   LEGAL DOCUMENT SYSTEM (Root Extension)
+   Core Architecture: Pure Semantic Selectors & CSS Counters
+   ========================================================= */
+
+/* The root scoping identifier for the legal module */
+#legal-document {
+  /* Enforces the optimal reading line length for accessibility (WCAG) */
+  --legal-max-width: 75ch;
+  --legal-indent: var(--spacing-md);
+
+  font-family: var(--font-base);
+  font-size: var(--text-md);
+  line-height: var(--line-height);
+  color: var(--text-primary);
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: var(--spacing-xl) var(--spacing-inline);
+}
+
+/* =========================================================
+   LAYOUT & MATERIAL SHEETS
+   ========================================================= */
+
+/* The primary "paper" document container */
+#legal-document > article {
+  max-width: var(--legal-max-width);
+  margin: 0 auto;
+  background-color: var(--neutral-cream);
+  padding: var(--spacing-xxl) var(--spacing-xl);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-base);
+  box-shadow: var(--glass-shadow);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Optional high-contrast background layer to mimic an app surface */
+#legal-document > article::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: var(--gradient-rose-water-soft);
+  opacity: 0.25;
+  z-index: 0;
+}
+
+/* Table of Contents / Navigation Index Box */
+#legal-document > nav {
+  max-width: var(--legal-max-width);
+  margin: 0 auto var(--spacing-lg) auto;
+  background: var(--surface-elevated);
+  backdrop-filter: var(--backdrop-filter);
+  -webkit-backdrop-filter: var(--backdrop-filter);
+  border: 1px solid var(--border-glass);
+  padding: var(--spacing-md);
+  border-radius: var(--radius-md);
+  box-shadow: var(--glass-shadow);
+}
+
+/* =========================================================
+   TYPOGRAPHY & BRAND CONTRAST SYSTEMS
+   ========================================================= */
+
+#legal-document article h1,
+#legal-document article h2,
+#legal-document article h3 {
+  color: var(--text-heading);
+  font-weight: var(--font-weight-black);
+  letter-spacing: -0.02em;
+  margin-top: var(--spacing-xl);
+  margin-bottom: var(--spacing-sm);
+  position: relative;
+  z-index: 1;
+}
+
+/* Document Main Header (First h1 inside the article) */
+#legal-document article > h1:first-of-type {
+  font-size: var(--text-2xl);
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: var(--spacing-xl);
+  padding-bottom: var(--spacing-md);
+  border-bottom: 3px solid var(--color-velvet);
+  color: var(--text-strong);
+}
+
+/* Document Metadata / Subtitle (Paragraph immediately following the main h1) */
+#legal-document article > h1:first-of-type + p {
+  font-size: var(--text-lg);
+  color: var(--text-muted);
+  font-weight: var(--font-weight-medium);
+  text-align: center;
+  margin-top: calc(var(--spacing-xl) * -1);
+  margin-bottom: var(--spacing-xxl);
+}
+
+/* Structural Body Paragraphs */
+#legal-document article p {
+  margin-bottom: var(--spacing-md);
+  color: var(--text-primary);
+  text-align: left; /* Prevents cognitive/dyslexic fatigue caused by justified text spacing */
+  position: relative;
+  z-index: 1;
+}
+
+/* Strong emphasis tags mapped to maximum accessible legal contrast */
+#legal-document strong {
+  color: var(--text-strong);
+  font-weight: var(--font-weight-bold);
+}
+
+/* Semantic defined terms via custom boolean attribute selector */
+#legal-document [data-legal-term] {
+  background: var(--gradient-yellow-meringue);
+  border-bottom: 2px solid var(--color-gold);
+  padding: 2px var(--spacing-xs);
+  border-radius: var(--radius-sm);
+  color: var(--text-strong);
+  font-weight: var(--font-weight-semibold);
+}
+
+/* =========================================================
+   LEGAL NESTED STRUCTURE (Articles & Clauses)
+   Uses structural sibling selectors and CSS Native Counters
+   ========================================================= */
+
+/* Main legal body scoping area */
+#legal-document main {
+  counter-reset: article-counter;
+  position: relative;
+  z-index: 1;
+}
+
+/* Sequential Sections behave automatically as localized Articles */
+#legal-document main > section {
+  counter-increment: article-counter;
+  counter-reset: clause-counter;
+  margin-top: var(--spacing-xl);
+  margin-bottom: var(--spacing-md);
+  padding: var(--spacing-md);
+  background: var(--surface-base);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+}
+
+/* Automatic prepending of "Article X -" to section titles (h2) */
+#legal-document main > section > h2::before {
+  content: "Article " counter(article-counter) " — ";
+  color: var(--color-velvet);
+  font-weight: var(--font-weight-black);
+}
+
+#legal-document main > section > h2 {
+  font-size: var(--text-lg);
+  border-bottom: 1px solid var(--border-strong);
+  padding-bottom: var(--spacing-xs);
+  margin-top: 0;
+}
+
+/* Clause List (ul directly following an Article title) */
+#legal-document main > section > h2 + ul {
+  list-style-type: none;
+  padding-left: 0;
+  margin-top: var(--spacing-md);
+}
+
+/* Singular Clauses (li) parsing multi-tier indexing (X.Y) */
+#legal-document main > section > h2 + ul > li {
+  counter-increment: clause-counter;
+  position: relative;
+  padding-left: calc(var(--legal-indent) + 1.5ch);
+  margin-bottom: var(--spacing-sm);
+  color: var(--text-primary);
+}
+
+#legal-document main > section > h2 + ul > li::before {
+  content: counter(article-counter) "." counter(clause-counter);
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-weight: var(--font-weight-bold);
+  color: var(--text-secondary);
+}
+
+/* =========================================================
+   SPECIAL NOTICES & INTERACTIVE UI
+   ========================================================= */
+
+/* Critical Alert Notices (e.g., Termination, Liability Disclaimers) */
+#legal-document aside[data-type="alert"] {
+  background: var(--gradient-rose-water-soft);
+  border: 1px solid var(--color-rose);
+  border-left: var(--spacing-xs) solid var(--color-magenta);
+  padding: var(--spacing-md);
+  border-radius: var(--radius-md);
+  margin: var(--spacing-lg) 0;
+  position: relative;
+  z-index: 1;
+}
+
+#legal-document aside[data-type="alert"] p {
+  margin-bottom: 0;
+  color: var(--text-strong);
+}
+
+/* Informative / Decorative Glow Blocks */
+#legal-document aside[data-type="info"] {
+  background: var(--color-bg-mint);
+  border: 1px solid var(--color-mint);
+  border-left: var(--spacing-xs) solid var(--color-green);
+  padding: var(--spacing-md);
+  border-radius: var(--radius-md);
+  margin: var(--spacing-lg) 0;
+  box-shadow: var(--glass-green-glow);
+}
+
+/* Anchor Links within Legal Frameworks */
+#legal-document a {
+  color: var(--text-link);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  font-weight: var(--font-weight-medium);
+  transition: color var(--duration-fast) var(--ease-standard);
+}
+
+#legal-document a:hover {
+  color: var(--text-hover);
+}
+
+#legal-document a:active {
+  color: var(--text-active);
+}
+
+#legal-document a:focus-visible {
+  outline: var(--focus-ring);
+  outline-offset: var(--focus-offset);
+  border-radius: var(--radius-sm);
+}
+
+/* =========================================================
+   CLOSING EXECUTION SYSTEM (Signatures Block)
+   ========================================================= */
+
+/* Signature block sitting cleanly at the base footer of the article */
+#legal-document article > footer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: var(--spacing-xl);
+  margin-top: var(--spacing-xxl);
+  padding-top: var(--spacing-lg);
+  border-top: 2px dashed var(--border-strong);
+  position: relative;
+  z-index: 1;
+}
+
+#legal-document article > footer > div {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+}
+
+/* Physically renders standard execution signing underlines */
+#legal-document article > footer > div > span::before {
+  content: "";
+  display: block;
+  margin-top: var(--spacing-xl);
+  margin-bottom: var(--spacing-xs);
+  border-bottom: 1px solid var(--text-primary);
+}
+
+#legal-document article > footer > div > span {
+  font-size: var(--text-xs);
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: var(--font-weight-medium);
+}
+
+/* =========================================================
+   NATIVE PRINT MEDIA STYLING
+   ========================================================= */
+@media print {
+  body {
+    background: #ffffff !important;
+    color: #000000 !important;
+  }
+
+  #legal-document {
+    padding: 0;
+    max-width: 100%;
+  }
+
+  #legal-document > article {
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    background: transparent !important;
+    max-width: 100% !important;
+  }
+
+  #legal-document > article::before {
+    display: none !important;
+  }
+
+  #legal-document main > section {
+    page-break-inside: avoid;
+    break-inside: avoid;
+    border: none !important;
+    background: transparent !important;
+    padding: 0 !important;
+  }
+
+  #legal-document article > footer {
+    page-break-inside: avoid;
+    break-inside: avoid;
+    margin-top: 5cm; /* Allocation space for execution ink seals */
+  }
+
+  #legal-document > nav,
+  [data-print="none"] {
+    display: none !important;
+  }
+
+  #legal-document a {
+    color: #000000 !important;
+    text-decoration: none !important;
+  }
+
+  /* Prints inline absolute paths next to hyperlinks on physical paper */
+  #legal-document a[href^="http"]::after {
+    content: " (" attr(href) ")";
+    font-size: var(--text-xs);
+    color: var(--text-muted);
+  }
+}

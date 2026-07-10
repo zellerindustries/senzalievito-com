@@ -52,7 +52,7 @@
   display: flex;
   align-items: center;
   align-self: stretch;
-  height: 100%; /* FIXED: Forza il link a prendere tutta l'altezza del clamp dell'header */
+  height: 100%;
 }
 #site-logo {
   display: block;
@@ -76,7 +76,7 @@
 /* Media Query Desktop-only per l'overflow (Evita glitch visivi pre-animazione) */
 @media (min-width: 769px) {
   #site-header {
-    overflow: hidden; /* FIXED: Mantiene l'effetto pulito solo dove serve */
+    overflow: hidden;
   }
 }
 /* =========================
@@ -85,40 +85,21 @@
 @media (max-width: 768px) {
   #site-header {
     justify-content: space-between;
-    overflow: visible !important; /* FIXED: Cruciale per non far tagliare il menu fixed */
   }
   #site-header .menu-toggle {
     display: block;
-    /* FIXED: resta nel normale flusso dell'header quando il menu è
-       chiuso, così appare correttamente dentro la barra come prima.
-       Viene "estratto" in position:fixed SOLO quando il menu è aperto
-       (vedi regola [aria-expanded="true"] sotto), garantendo che resti
-       raggiungibile sopra il pannello fullscreen senza doverlo tenere
-       sempre fuori flusso. */
-    position: static;
   }
 
-  /* Solo mentre il menu è aperto: il bottone si "stacca" dall'header
-     e si ancora al viewport reale, sempre sopra il nav fullscreen
-     (z-index 10000 > 9999 del nav) indipendentemente da scroll o
-     posizione sticky dell'header. initHeaderNavigation() già imposta
-     aria-expanded="true"/"false", quindi non servono modifiche JS. */
   #site-header .menu-toggle[aria-expanded="true"] {
     position: fixed;
-    top: calc(var(--spacing-md) + var(--spacing-md));
+    top: calc(var(--spacing-md) + var(--spacing-sm));
     right: calc(var(--spacing-sm) + var(--spacing-md));
     z-index: 10000;
   }
 
   #site-header nav {
     position: fixed !important;
-    inset: 0 !important; /* FIXED: sostituisce top/left/width/height,
-                             più robusto e impossibile da rompere
-                             parzialmente con override incompleti */
-
-    /* FIXED: tornato a sfondo traslucido + blur (invece di solido)
-       così il blur di #menu-overlay resta visibile dietro il nav,
-       mantenendo l'estetica "glass" invece di un pannello piatto. */
+    inset: 0 !important;
     background: var(--header-bg);
     -webkit-backdrop-filter: blur(24px);
     backdrop-filter: blur(24px);
@@ -127,9 +108,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: var(
-      --spacing-lg
-    ); /* FIXED: Spaziatura verticale più generosa su mobile */
+    gap: var(--spacing-lg);
     opacity: 0;
     pointer-events: none;
     visibility: hidden;
@@ -138,7 +117,7 @@
       visibility 0.4s ease;
     z-index: 9999;
   }
-  /* Stato Nav Attiva */
+
   #site-header nav.is-active {
     opacity: 1;
     pointer-events: auto;
@@ -190,7 +169,6 @@
   background: linear-gradient(
     135deg,
     rgba(255, 255, 255, 0.1),
-    /* FIXED: Abbassata l'opacità per rendere il blur più elegante */
     rgba(255, 255, 255, 0.05)
   );
   -webkit-backdrop-filter: blur(8px);
