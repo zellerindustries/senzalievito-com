@@ -8,10 +8,6 @@ export function initImageFallback(options: ImageFallbackOptions = {}): void {
 
   const LOG_PREFIX = options.logPrefix ?? "[img-fallback]";
 
-  console.info(`${LOG_PREFIX} initialized`, {
-    placeholder: PLACEHOLDER,
-  });
-
   document.addEventListener(
     "error",
     (event) => {

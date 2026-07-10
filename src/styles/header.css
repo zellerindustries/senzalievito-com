@@ -19,6 +19,10 @@
      altrimenti rompe il menu a schermo intero su mobile */
   z-index: 1000;
 }
+
+#site-header #header-nav .btn {
+  padding: var(--spacing-sm) var(--spacing-xl);
+}
 /* Blur + sfondo dell'header, applicati sullo STESSO ::before che
    .liquid-glass usa già per il riflesso vetro (un elemento ha un solo
    ::before). Le due gradient sono impilate come layer multipli così
@@ -139,6 +143,7 @@
     opacity: 1;
     pointer-events: auto;
     visibility: visible;
+    padding: var(--spacing-md);
   }
   /* --- EFFETTO BUBBLE POP SUI BOTTONI --- */
   #site-header nav .btn {
@@ -201,26 +206,20 @@
   visibility: visible;
   pointer-events: auto;
 }
+
+html.no-scroll,
 body.no-scroll {
-  overflow: hidden;
-  touch-action: none;
-  overscroll-behavior: none;
+  overflow: hidden !important;
+
+  touch-action: none !important;
+  overscroll-behavior: none !important;
+
+  max-height: 100% !important;
+  height: 100% !important;
+
+  position: relative !important;
 }
-/* =========================
-   CONTAINING-BLOCK TRAP FIX
-========================= */
-/* HARD OVERRIDE — must stay last in the cascade.
-   Debug logging confirmed that .liquid-glass (applied via class on
-   #site-header in the HTML) leaves `will-change: transform` active,
-   and adds a computed `transform: matrix(1,0,0,1,0,0)` after the menu
-   is toggled (from the :active/transition interaction), even though
-   nothing appears to move visually. Both of those properties make
-   #site-header a "containing block" for its position:fixed children —
-   meaning the mobile nav positions itself relative to #site-header's
-   location in the document instead of the real viewport. This is
-   exactly why the menu jumps to the top of the page after scrolling.
-   !important + placement as the last rule guarantees this wins over
-   .liquid-glass regardless of source order or specificity elsewhere. */
+
 #site-header {
   will-change: auto !important;
   transform: none !important;

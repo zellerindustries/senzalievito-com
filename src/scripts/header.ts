@@ -28,6 +28,9 @@ export function initHeaderNavigation(): void {
 
     menuToggle.setAttribute("aria-expanded", "false");
 
+    // Targets <html> to freeze the viewport wrapper
+    document.documentElement.classList.remove("no-scroll");
+    // Backup for standard body elements
     document.body.classList.remove("no-scroll");
 
     menuOverlay?.classList.remove("is-active");
@@ -45,6 +48,9 @@ export function initHeaderNavigation(): void {
 
     menuToggle.setAttribute("aria-expanded", "true");
 
+    // Targets <html> to freeze the viewport wrapper
+    document.documentElement.classList.add("no-scroll");
+    // Backup for standard body elements
     document.body.classList.add("no-scroll");
 
     menuOverlay?.classList.add("is-active");

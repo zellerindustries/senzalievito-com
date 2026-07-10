@@ -13,8 +13,7 @@
   isolation: isolate;
   overflow: hidden;
   cursor: pointer;
-  min-height: 2.75rem;
-  padding: var(--spacing-sm) var(--spacing-xl);
+  padding: var(--spacing-md) var(--spacing-xl);
   font-family: var(--font-base);
   font-size: var(--text-sm);
   font-weight: var(--font-weight-bold);

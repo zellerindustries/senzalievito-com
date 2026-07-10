@@ -10,7 +10,6 @@ export function applyAriaFallback(): void {
 
           if (text) {
             a.setAttribute("aria-label", text);
-            console.info(`${LOG_PREFIX} label added to`, a);
           }
         }
       }
