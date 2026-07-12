@@ -1,4 +1,5 @@
 import { applyAriaFallback } from "./scripts/accessibility";
+import { initRightClickGif } from "./scripts/bat";
 import { initFlipBoxes } from "./scripts/flip-cards";
 import { initForm } from "./scripts/form";
 import { initHeaderNavigation } from "./scripts/header";
@@ -33,3 +34,5 @@ initImageFallback({
 initSmoothScroll();
 
 initForm();
+
+initRightClickGif();
