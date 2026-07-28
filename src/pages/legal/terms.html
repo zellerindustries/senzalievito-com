@@ -5,7 +5,7 @@
     <!-- Ensures proper responsive scaling on all mobile devices -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Termini e Condizioni d'Uso | Nome Brand</title>
+    <title>Termini e Condizioni d'Uso</title>
 
     <!-- Privacy & SEO: Prevents search engines from indexing this standalone legal page or following outdated links -->
     <meta name="robots" content="noindex, nofollow, noarchive" />
@@ -29,10 +29,6 @@
     <link rel="stylesheet" href="legal.css" />
   </head>
   <body>
-    <!-- =====================================================
-      HEADER
-  ===================================================== -->
-
     <header class="liquid-glass" id="site-header">
       <div class="sr-only">
         <h1>Valentina Battafarano – Digital Strategist & Comunicazione</h1>
@@ -267,6 +263,25 @@
         </small>
       </p>
     </footer>
+
+    <!-- =====================================================
+     ACCESSIBLE MOBILE BOTTOM BAR
+    ===================================================== -->
+    <nav class="bottom-bar" aria-label="Navigazione mobile principale">
+      <a href="/" class="bottom-bar-item">
+        <i class="bi bi-house-door-fill icon" aria-hidden="true"></i>
+        <span>Home</span>
+      </a>
+      <a href="/servizi" class="bottom-bar-item">
+        <i class="bi bi-briefcase-fill icon" aria-hidden="true"></i>
+        <span>Servizi</span>
+      </a>
+      <a href="/contatti" class="bottom-bar-item">
+        <i class="bi bi-chat-heart-fill icon" aria-hidden="true"></i>
+        <span>Contatti</span>
+      </a>
+    </nav>
+
     <script src="/script.js"></script>
   </body>
 </html>

@@ -4,7 +4,7 @@
 const CONFIG = {
   LOCK_KEY: "senza_lievito_form_lock",
   SUCCESS_KEY: "senza_lievito_form_submitted",
-  LOCK_DURATION_MS: 5 * 60 * 1000,
+  LOCK_DURATION_MS: 24 * 60 * 60 * 1000, // 24 hours (1 day) cooldown
   MIN_FILL_TIME_SECONDS: 3,
   MAX_MESSAGE_LENGTH: 5000,
   DEBOUNCE_MS: 200,
@@ -90,8 +90,13 @@ export function initForm(): void {
   /**
    * Helpers
    */
-  const hasSubmitted = () =>
-    localStorage.getItem(CONFIG.SUCCESS_KEY) === "true";
+  const getRemainingLockTime = () => {
+    const last = localStorage.getItem(CONFIG.LOCK_KEY);
+    if (!last) return 0;
+    return Math.max(0, CONFIG.LOCK_DURATION_MS - (Date.now() - +last));
+  };
+
+  const hasActiveLock = () => getRemainingLockTime() > 0;
 
   /**
    * Character Counter
@@ -239,7 +244,7 @@ export function initForm(): void {
    * Submit state
    */
   const updateSubmitState = () => {
-    if (hasSubmitted()) return;
+    if (hasActiveLock()) return;
     submitButton.disabled = !isFormValid();
   };
 
@@ -274,15 +279,6 @@ export function initForm(): void {
   };
 
   /**
-   * Lock
-   */
-  const getRemainingLockTime = () => {
-    const last = localStorage.getItem(CONFIG.LOCK_KEY);
-    if (!last) return 0;
-    return Math.max(0, CONFIG.LOCK_DURATION_MS - (Date.now() - +last));
-  };
-
-  /**
    * Reset
    */
   const resetFormUI = () => {
@@ -296,7 +292,7 @@ export function initForm(): void {
    * Fake success (bot protection)
    */
   const fakeSuccess = () => {
-    localStorage.setItem(CONFIG.SUCCESS_KEY, "true");
+    localStorage.setItem(CONFIG.LOCK_KEY, Date.now().toString());
     showSuccessUI();
   };
 
@@ -327,9 +323,9 @@ export function initForm(): void {
       return;
     }
 
-    if (getRemainingLockTime() > 0) {
+    if (hasActiveLock()) {
       updateStatus(
-        "Per favore attendi qualche minuto prima di inviare un altro messaggio.",
+        "Per favore attendi 24 ore prima di inviare un altro messaggio.",
         "error",
       );
       return;
@@ -364,7 +360,6 @@ export function initForm(): void {
       if (!res.ok) throw new Error();
 
       localStorage.setItem(CONFIG.LOCK_KEY, Date.now().toString());
-      localStorage.setItem(CONFIG.SUCCESS_KEY, "true");
 
       resetFormUI();
       showSuccessUI();
@@ -375,7 +370,7 @@ export function initForm(): void {
         "error",
       );
     } finally {
-      if (!hasSubmitted()) {
+      if (!hasActiveLock()) {
         submitButton.disabled = false;
         submitButton.classList.remove("loading");
         submitButton.textContent = originalText;
@@ -401,11 +396,8 @@ export function initForm(): void {
   });
 
   // Checkbox needs its own listener since it's not part of `fields`
-  // (change fires reliably for checkboxes across browsers; input also works but change is conventional)
   privacyField.addEventListener("change", () => {
     debouncedUpdate();
-    // Only show an error once the user has actually interacted and unchecked it;
-    // don't nag them before they've had a chance to check it.
     if (!privacyField.checked) {
       validatePrivacyUI();
     } else {
@@ -416,7 +408,7 @@ export function initForm(): void {
   /**
    * Init
    */
-  if (hasSubmitted()) {
+  if (hasActiveLock()) {
     showSuccessUI();
   } else {
     showFormUI();

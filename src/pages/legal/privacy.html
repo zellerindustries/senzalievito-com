@@ -5,7 +5,7 @@
     <!-- Ensures proper responsive scaling on all mobile devices -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Informativa sulla Privacy (Privacy Policy) | Nome Brand</title>
+    <title>Informativa sulla Privacy</title>
 
     <!-- Privacy & SEO: Prevents search engines from indexing this standalone legal page or following outdated links -->
     <meta name="robots" content="noindex, nofollow, noarchive" />
@@ -34,6 +34,39 @@
     <link rel="stylesheet" href="legal.css" />
   </head>
   <body>
+    <header class="liquid-glass" id="site-header">
+      <div class="sr-only">
+        <h1>Valentina Battafarano – Digital Strategist & Comunicazione</h1>
+      </div>
+
+      <a href="/" aria-label="Homepage Senza Lievito">
+        <img src="/assets/logo.webp" alt="Senza Lievito Logo" id="site-logo" />
+      </a>
+
+      <button
+        class="menu-toggle btn btn-soft btn-glass icon-only icon-round"
+        id="menu-toggle"
+        type="button"
+        aria-label="Apri menu"
+        aria-expanded="false"
+        aria-controls="header-nav"
+      >
+        <i class="bi bi-list"></i>
+      </button>
+
+      <nav id="header-nav" aria-label="Navigazione principale">
+        <a href="/" class="btn btn-soft btn-glass"> Home </a>
+        <a href="/chi-sono" class="btn btn-soft btn-glass btn-shine">
+          Chi Sono
+        </a>
+
+        <a href="/servizi" class="btn btn-soft btn-glass btn-shine">
+          Servizi
+        </a>
+
+        <a href="/contatti" class="btn btn-cta"> Contatti </a>
+      </nav>
+    </header>
     <!-- Document Wrapper Container -->
     <div id="legal-document">
       <article aria-labelledby="policy-title">
@@ -55,8 +88,9 @@
           <!-- Introductory Context Block -->
           <p data-type="intro">
             La presente Informativa descrive le modalità di trattamento dei dati
-            personali degli utenti che consultano il sito web senzalievito.com (di seguito "Sito") e che utilizzano i canali di contatto
-            messi a disposizione.
+            personali degli utenti che consultano il sito web senzalievito.com
+            (di seguito "Sito") e che utilizzano i canali di contatto messi a
+            disposizione.
           </p>
 
           <!-- Section 1 -->
@@ -64,26 +98,21 @@
             <h2 id="sec-titolare">Titolare del Trattamento</h2>
             <ul>
               <li>
-                <strong>Ragione Sociale/Nome Cognome:</strong> Valentina Battafarano
+                <strong>Ragione Sociale/Nome Cognome:</strong> Valentina
+                Battafarano
               </li>
-              <li>
-                <strong>Sede Legale:</strong> Malo (VI)
-              </li>
-              <li>
-                <strong>P.IVA / C.F.:</strong> 03525210543
-              </li>
+              <li><strong>Sede Legale:</strong> Malo (VI)</li>
+              <li><strong>P.IVA / C.F.:</strong> 03525210543</li>
               <li>
                 <strong>Canali di contatto ufficiali:</strong>
                 <ul>
                   <li>
                     <strong>Email:</strong>
                     <a href="mailto:info@senzalievito.com"
-                      >info@senzalievito.com/a
+                      >info@senzalievito.com</a
                     >
                   </li>
-                  <li>
-                    <strong>WhatsApp:</strong> +39 352 034 5309
-                  </li>
+                  <li><strong>WhatsApp:</strong> +39 352 034 5309</li>
                   <li>
                     <strong>Modulo di contatto:</strong> Disponibile
                     direttamente nelle pagine del Sito
@@ -267,6 +296,24 @@
         </small>
       </p>
     </footer>
+
+    <!-- =====================================================
+     ACCESSIBLE MOBILE BOTTOM BAR
+    ===================================================== -->
+    <nav class="bottom-bar" aria-label="Navigazione mobile principale">
+      <a href="/" class="bottom-bar-item">
+        <i class="bi bi-house-door-fill icon" aria-hidden="true"></i>
+        <span>Home</span>
+      </a>
+      <a href="/servizi" class="bottom-bar-item">
+        <i class="bi bi-briefcase-fill icon" aria-hidden="true"></i>
+        <span>Servizi</span>
+      </a>
+      <a href="/contatti" class="bottom-bar-item">
+        <i class="bi bi-chat-heart-fill icon" aria-hidden="true"></i>
+        <span>Contatti</span>
+      </a>
+    </nav>
 
     <script src="/script.js"></script>
   </body>

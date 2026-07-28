@@ -124,8 +124,9 @@
     visibility: visible;
     padding: var(--spacing-md);
   }
-  /* --- EFFETTO BUBBLE POP SUI BOTTONI --- */
+
   #site-header nav .btn {
+    padding: var(--spacing-md) var(--spacing-xl) !important;
     opacity: 0;
     transform: scale(0.4) translateY(-40px);
     will-change: transform, opacity;

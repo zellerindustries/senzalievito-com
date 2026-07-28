@@ -1,0 +1,6 @@
+a[aria-disabled="true"] {
+  color: var(--color-velvet);
+  text-decoration: underline;
+  cursor: not-allowed;
+  pointer-events: none;
+}

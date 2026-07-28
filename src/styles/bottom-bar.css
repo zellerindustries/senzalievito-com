@@ -1,0 +1,108 @@
+/* =========================================================
+   MOBILE BOTTOM BAR (FIXED CENTERING)
+========================================================= */
+
+.bottom-bar {
+  position: fixed;
+  bottom: calc(var(--spacing-md) + env(safe-area-inset-bottom, 0px));
+
+  /* Robust centering that stays inside viewports and containers */
+  left: 0;
+  right: 0;
+  margin-inline: auto;
+  width: min(92%, 400px);
+
+  /* Glassmorphism & Surface styling */
+  background: var(--surface-elevated);
+  backdrop-filter: var(--backdrop-filter);
+  -webkit-backdrop-filter: var(--backdrop-filter);
+
+  border: 1px solid var(--glass-border-strong);
+  border-radius: var(--radius-pill);
+  box-shadow: var(--glass-shadow-strong), var(--glass-inner-border);
+
+  /* Layout driven entirely by padding, margin, and gap */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--spacing-xs);
+  gap: var(--spacing-xs);
+  z-index: 1000;
+
+  transition:
+    transform var(--duration-base) var(--ease-standard),
+    box-shadow var(--duration-base) var(--ease-standard);
+}
+
+.bottom-bar-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+
+  /* Fluid sizing using padding and gap */
+  padding: var(--spacing-md) var(--spacing-xs);
+  gap: 3px;
+
+  color: var(--text-muted);
+  text-decoration: none;
+  border-radius: var(--radius-pill);
+  transition: all var(--duration-base) var(--ease-standard);
+  position: relative;
+}
+
+.bottom-bar-item .icon {
+  font-size: 1.15rem;
+  line-height: 1;
+  transition: transform var(--duration-base) var(--ease-standard);
+}
+
+.bottom-bar-item span {
+  font-size: var(--text-xs);
+  font-weight: var(--font-weight-medium);
+  letter-spacing: -0.01em;
+}
+
+/* Hover, Focus, & Active States */
+.bottom-bar-item:hover {
+  color: var(--text-primary);
+  background: var(--surface-hover);
+}
+
+.bottom-bar-item:focus-visible {
+  outline: var(--focus-ring);
+  outline-offset: var(--focus-offset);
+}
+
+.bottom-bar-item:active {
+  transform: scale(0.95);
+}
+
+.bottom-bar-item.active {
+  color: var(--text-on-primary);
+  background: var(--gradient-primary);
+  box-shadow: var(--glass-pink-glow);
+  text-decoration: none;
+}
+
+.bottom-bar-item.active .icon {
+  transform: scale(1.1);
+}
+
+/* Responsive display rule */
+@media (min-width: 769px) {
+  .bottom-bar {
+    display: none;
+  }
+}
+
+/* Accessibility: Respect user motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .bottom-bar,
+  .bottom-bar-item,
+  .bottom-bar-item .icon {
+    transition: none !important;
+    transform: none !important;
+  }
+}

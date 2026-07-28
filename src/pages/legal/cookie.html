@@ -5,7 +5,7 @@
     <!-- Ensures proper responsive scaling on all mobile devices -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Informativa sui Cookie (Cookie Policy) | Nome Brand</title>
+    <title>Informativa sui Cookie</title>
 
     <!-- Privacy & SEO: Prevents search engines from indexing this standalone legal page or following outdated links -->
     <meta name="robots" content="noindex, nofollow, noarchive" />
@@ -33,7 +33,41 @@
     <link rel="stylesheet" href="../style.css" />
     <link rel="stylesheet" href="legal.css" />
   </head>
+
   <body>
+    <header class="liquid-glass" id="site-header">
+      <div class="sr-only">
+        <h1>Valentina Battafarano – Digital Strategist & Comunicazione</h1>
+      </div>
+
+      <a href="/" aria-label="Homepage Senza Lievito">
+        <img src="/assets/logo.webp" alt="Senza Lievito Logo" id="site-logo" />
+      </a>
+
+      <button
+        class="menu-toggle btn btn-soft btn-glass icon-only icon-round"
+        id="menu-toggle"
+        type="button"
+        aria-label="Apri menu"
+        aria-expanded="false"
+        aria-controls="header-nav"
+      >
+        <i class="bi bi-list"></i>
+      </button>
+
+      <nav id="header-nav" aria-label="Navigazione principale">
+        <a href="/" class="btn btn-soft btn-glass"> Home </a>
+        <a href="/chi-sono" class="btn btn-soft btn-glass btn-shine">
+          Chi Sono
+        </a>
+
+        <a href="/servizi" class="btn btn-soft btn-glass btn-shine">
+          Servizi
+        </a>
+
+        <a href="/contatti" class="btn btn-cta"> Contatti </a>
+      </nav>
+    </header>
     <!-- Document Wrapper Container -->
     <div id="legal-document">
       <article aria-labelledby="policy-title">
@@ -228,6 +262,24 @@
         </small>
       </p>
     </footer>
+    <!-- =====================================================
+     ACCESSIBLE MOBILE BOTTOM BAR
+    ===================================================== -->
+    <nav class="bottom-bar" aria-label="Navigazione mobile principale">
+      <a href="/" class="bottom-bar-item">
+        <i class="bi bi-house-door-fill icon" aria-hidden="true"></i>
+        <span>Home</span>
+      </a>
+      <a href="/servizi" class="bottom-bar-item">
+        <i class="bi bi-briefcase-fill icon" aria-hidden="true"></i>
+        <span>Servizi</span>
+      </a>
+      <a href="/contatti" class="bottom-bar-item">
+        <i class="bi bi-chat-heart-fill icon" aria-hidden="true"></i>
+        <span>Contatti</span>
+      </a>
+    </nav>
+
     <script src="/script.js"></script>
   </body>
 </html>

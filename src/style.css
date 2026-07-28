@@ -1,7 +1,9 @@
 @import url("./styles/root.css");
+@import url("./styles/accessibility.css");
 @import url("./styles/animations.css");
 @import url("./styles/bento-boxes.css");
 @import url("./styles/bento-layout.css");
+@import url("./styles/bottom-bar.css");
 @import url("./styles/bootstrap-icons.css");
 @import url("./styles/buttons.css");
 @import url("./styles/classes.css");
