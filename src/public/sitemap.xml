@@ -21,13 +21,37 @@
     </url>
 
     <url>
-        <loc>https://senzalievito.com/privacy</loc>
+        <loc>https://senzalievito.com/chi-sono</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://senzalievito.com/glossario</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <url>
+        <loc>https://senzalievito.com/form</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://senzalievito.com/legal/privacy</loc>
         <changefreq>yearly</changefreq>
         <priority>0.3</priority>
     </url>
 
     <url>
-        <loc>https://senzalievito.com/cookie</loc>
+        <loc>https://senzalievito.com/legal/cookie</loc>
+        <changefreq>yearly</changefreq>
+        <priority>0.3</priority>
+    </url>
+
+    <url>
+        <loc>https://senzalievito.com/legal/terms</loc>
         <changefreq>yearly</changefreq>
         <priority>0.3</priority>
     </url>
