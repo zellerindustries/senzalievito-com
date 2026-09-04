@@ -66,3 +66,17 @@
 :is(.pill-primary, .pill-secondary, .pill-accent, .pill-highlight) {
   border-color: transparent;
 }
+
+/* =========================
+   LAYOUT
+========================= */
+
+.pill-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-sm);
+}
+
+.pill-group + .pill-group {
+  margin-top: var(--spacing-sm);
+}
