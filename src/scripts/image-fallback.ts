@@ -39,6 +39,6 @@ export function initImageFallback(options: ImageFallbackOptions = {}): void {
         newSrc: PLACEHOLDER,
       });
     },
-    true, // capture phase required for resource errors
+    true // capture phase required for resource errors
   );
 }

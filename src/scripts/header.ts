@@ -1,22 +1,22 @@
 export function initHeaderNavigation(): void {
   const menuToggle = document.getElementById(
-    "menu-toggle",
+    "menu-toggle"
   ) as HTMLButtonElement | null;
 
   const headerNav = document.getElementById("header-nav") as HTMLElement | null;
 
   const menuOverlay = document.getElementById(
-    "menu-overlay",
+    "menu-overlay"
   ) as HTMLElement | null;
 
   const menuToggleIcon = menuToggle?.querySelector("i") as HTMLElement | null;
 
   const navLinks = document.querySelectorAll(
-    ".header-nav .btn",
+    ".header-nav .btn"
   ) as NodeListOf<HTMLAnchorElement>;
 
   const sections = document.querySelectorAll(
-    "main section",
+    "main section"
   ) as NodeListOf<HTMLElement>;
 
   const closeMenu = (): void => {

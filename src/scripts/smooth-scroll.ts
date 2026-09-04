@@ -21,7 +21,7 @@ export function initSmoothScroll(): void {
               block: "start",
             });
           }
-        },
+        }
       );
     });
 }

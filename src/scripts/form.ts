@@ -31,16 +31,16 @@ export function initForm(): void {
    * DOM Elements (check if exist)
    */
   const contactForm = document.getElementById(
-    "contact-form",
+    "contact-form"
   ) as HTMLFormElement | null;
   const submitButton = document.getElementById(
-    "submit-btn",
+    "submit-btn"
   ) as HTMLButtonElement | null;
   const statusDiv = document.getElementById(
-    "form-status",
+    "form-status"
   ) as HTMLDivElement | null;
   const successScreen = document.getElementById(
-    "form-success",
+    "form-success"
   ) as HTMLDivElement | null;
 
   // Exit early if form or required elements do not exist
@@ -53,19 +53,19 @@ export function initForm(): void {
    * Fields (safe binding including select element)
    */
   const nameField = contactForm.querySelector(
-    "#name",
+    "#name"
   ) as HTMLInputElement | null;
   const emailField = contactForm.querySelector(
-    "#email",
+    "#email"
   ) as HTMLInputElement | null;
   const subjectField = contactForm.querySelector(
-    "#subject",
+    "#subject"
   ) as HTMLSelectElement | null;
   const messageField = contactForm.querySelector(
-    "#message",
+    "#message"
   ) as HTMLTextAreaElement | null;
   const privacyField = contactForm.querySelector(
-    "#privacy",
+    "#privacy"
   ) as HTMLInputElement | null;
 
   if (
@@ -102,7 +102,7 @@ export function initForm(): void {
    * Character Counter
    */
   let counterEl = contactForm.querySelector(
-    ".char-counter",
+    ".char-counter"
   ) as HTMLDivElement | null;
   if (!counterEl) {
     counterEl = document.createElement("div");
@@ -140,7 +140,7 @@ export function initForm(): void {
    */
   const setFieldError = (
     field: HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement,
-    message: string,
+    message: string
   ) => {
     const id = `${field.id}-error`;
     let el = document.getElementById(id);
@@ -157,7 +157,7 @@ export function initForm(): void {
   };
 
   const clearFieldError = (
-    field: HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement,
+    field: HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
   ) => {
     const id = `${field.id}-error`;
     document.getElementById(id)?.remove();
@@ -193,7 +193,7 @@ export function initForm(): void {
     if (!privacyField.checked) {
       setFieldError(
         privacyField,
-        "Devi accettare la Privacy Policy per continuare.",
+        "Devi accettare la Privacy Policy per continuare."
       );
       return false;
     }
@@ -203,7 +203,7 @@ export function initForm(): void {
 
   const validateFormUI = () => {
     const fieldsValid = Object.keys(fields).every((k) =>
-      validateFieldUI(k as keyof typeof fields),
+      validateFieldUI(k as keyof typeof fields)
     );
     const privacyValid = validatePrivacyUI();
     return fieldsValid && privacyValid;
@@ -214,7 +214,7 @@ export function initForm(): void {
    */
   const debounce = <T extends (...args: any[]) => void>(
     fn: T,
-    delay: number,
+    delay: number
   ) => {
     let t: number;
     return (...args: Parameters<T>) => {
@@ -265,7 +265,7 @@ export function initForm(): void {
     counterEl!.textContent = `${len} / ${CONFIG.MAX_MESSAGE_LENGTH}`;
     counterEl!.classList.toggle(
       "warning",
-      len > CONFIG.MAX_MESSAGE_LENGTH * 0.9,
+      len > CONFIG.MAX_MESSAGE_LENGTH * 0.9
     );
   };
 
@@ -326,7 +326,7 @@ export function initForm(): void {
     if (hasActiveLock()) {
       updateStatus(
         "Per favore attendi 24 ore prima di inviare un altro messaggio.",
-        "error",
+        "error"
       );
       return;
     }
@@ -354,7 +354,7 @@ export function initForm(): void {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(data),
-        },
+        }
       );
 
       if (!res.ok) throw new Error();
@@ -367,7 +367,7 @@ export function initForm(): void {
     } catch {
       updateStatus(
         "Impossibile inviare il messaggio. Riprova più tardi.",
-        "error",
+        "error"
       );
     } finally {
       if (!hasActiveLock()) {
