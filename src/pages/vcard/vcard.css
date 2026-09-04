@@ -1,0 +1,136 @@
+/* =========================================================
+   VCARD PAGE (single-screen digital business card)
+========================================================= */
+
+.vcard-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100dvh;
+  margin: 0;
+  padding: var(--spacing-md);
+}
+
+.vcard-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-xl);
+  width: 100%;
+  max-width: 420px;
+  height: 100%;
+  max-height: min(780px, calc(100dvh - 2 * var(--spacing-md)));
+  padding: var(--spacing-xl) var(--spacing-lg);
+  overflow-y: auto;
+  text-align: center;
+}
+
+.vcard-identity {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-md);
+}
+
+.vcard-logo {
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
+}
+
+.vcard-qr-primary {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.vcard-qr-primary img {
+  display: block;
+  width: 176px;
+  height: 176px;
+  max-width: 100%;
+  padding: var(--spacing-sm);
+  border-radius: var(--radius-md);
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.vcard-qr-caption {
+  max-width: 26ch;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.vcard-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-sm);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.vcard-footer-link {
+  margin: 0;
+  color: inherit;
+  opacity: 0.85;
+  font-size: 0.85rem;
+}
+
+/* =========================================================
+   LANDSCAPE / SHORT VIEWPORTS
+   Stacked column layout doesn't fit short heights (rotated
+   phones, small browser windows) — switch to a two-column
+   grid so everything is visible without scrolling.
+========================================================= */
+@media (max-height: 500px) and (min-width: 560px) {
+  .vcard-card {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-areas:
+      "identity qr"
+      "details qr"
+      "footer qr";
+    align-items: center;
+    justify-items: start;
+    column-gap: var(--spacing-lg);
+    row-gap: var(--spacing-xs);
+    max-width: 640px;
+    max-height: calc(100dvh - 2 * var(--spacing-md));
+    padding: var(--spacing-md);
+    text-align: left;
+  }
+
+  .vcard-identity {
+    grid-area: identity;
+    align-items: flex-start;
+  }
+
+  .vcard-qr-primary {
+    grid-area: qr;
+    justify-self: center;
+  }
+
+  .vcard-qr-primary img {
+    width: 120px;
+    height: 120px;
+  }
+
+  .vcard-qr-caption {
+    max-width: 16ch;
+  }
+
+  .vcard-details {
+    grid-area: details;
+    align-items: flex-start;
+  }
+
+  .vcard-footer-link {
+    grid-area: footer;
+  }
+}
