@@ -1,0 +1,11 @@
+# Senza Lievito
+
+> Valentina Battafarano — digital strategy & communication consultant since 2013. Italian-language site.
+
+## Pages
+- [Home](https://senzalievito.com/): overview of services and approach
+- [Servizi](https://senzalievito.com/servizi): digital strategy, SEO, social media, funnel, personal branding services
+- [Chi Sono](https://senzalievito.com/chi-sono): professional profile of Valentina Battafarano
+- [Valentina](https://senzalievito.com/valentina): founder story, career timeline, certifications
+- [Glossario](https://senzalievito.com/glossario): plain-language definitions of digital marketing terms (SEO, GEO, AEO, UX, funnel, etc.)
+- [Contatti](https://senzalievito.com/contatti): contact channels
