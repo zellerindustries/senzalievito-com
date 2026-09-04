@@ -25,7 +25,7 @@
    FOOTER NAV
 ========================= */
 
-#footer-nav {
+#site-footer nav[aria-label^="Footer menu"] {
   display: flex;
   gap: var(--spacing-md);
   flex-wrap: wrap;
@@ -33,7 +33,7 @@
 }
 
 /* base link style (single source of truth) */
-#footer-nav a {
+#site-footer nav[aria-label^="Footer menu"] a {
   font-size: var(--text-sm);
   color: var(--text-muted);
   text-decoration: none;
@@ -43,7 +43,7 @@
   will-change: color;
 }
 
-#footer-nav a:hover {
+#site-footer nav[aria-label^="Footer menu"] a:hover {
   color: var(--color-primary);
 }
 

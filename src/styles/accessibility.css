@@ -4,3 +4,21 @@ a[aria-disabled="true"] {
   cursor: not-allowed;
   pointer-events: none;
 }
+
+/* Current-page nav indicator. Uses aria-current alone (never combine with
+   aria-disabled="true" on these links: that pairs with .btn[aria-disabled]
+   in buttons.css, whose opacity: 0.55 washes the pill out to near-invisible). */
+[aria-current="page"] {
+  pointer-events: none;
+}
+
+nav[aria-label="Footer menu principale"] a[aria-current="page"] {
+  color: var(--color-velvet);
+  text-decoration: underline;
+}
+
+#site-header .btn-soft[aria-current="page"] {
+  color: var(--text-on-primary) !important;
+  background: var(--gradient-primary);
+  border-color: transparent;
+}
