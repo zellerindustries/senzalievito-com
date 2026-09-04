@@ -4,7 +4,7 @@
  */
 export function initRightClickGif(): () => void {
   // CONFIGURAZIONE FISSA
-  const GIF_PATH = "assets/bat.gif";
+  const GIF_PATH = "/assets/bat.gif";
   const DURATION = 10000;
   const OFFSET = 5;
 
