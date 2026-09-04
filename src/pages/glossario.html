@@ -62,12 +62,165 @@
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
-        "@type": "CollectionPage",
-        "@id": "https://senzalievito.com/glossario#webpage",
-        "url": "https://senzalievito.com/glossario",
-        "name": "Glossario Marketing Digitale",
-        "description": "Definizioni semplici e accessibili dei principali termini del marketing digitale.",
-        "inLanguage": "it-IT"
+        "@graph": [
+          {
+            "@type": "CollectionPage",
+            "@id": "https://senzalievito.com/glossario#webpage",
+            "url": "https://senzalievito.com/glossario",
+            "name": "Glossario Marketing Digitale",
+            "description": "Definizioni semplici e accessibili dei principali termini del marketing digitale.",
+            "inLanguage": "it-IT",
+            "mainEntity": {
+              "@id": "https://senzalievito.com/glossario#glossary"
+            }
+          },
+          {
+            "@type": "BreadcrumbList",
+            "@id": "https://senzalievito.com/glossario#breadcrumb",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://senzalievito.com/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Glossario",
+                "item": "https://senzalievito.com/glossario"
+              }
+            ]
+          },
+          {
+            "@type": "DefinedTermSet",
+            "@id": "https://senzalievito.com/glossario#glossary",
+            "name": "Glossario Marketing Digitale",
+            "url": "https://senzalievito.com/glossario",
+            "inLanguage": "it-IT",
+            "hasDefinedTerm": [
+              {
+                "@type": "DefinedTerm",
+                "@id": "https://senzalievito.com/glossario#aeo",
+                "name": "AEO",
+                "inDefinedTermSet": "https://senzalievito.com/glossario#glossary",
+                "description": "Answer Engine Optimization. Metodologia di scrittura che permette ai contenuti di comparire tra le risposte dei motori di ricerca e dei sistemi di intelligenza artificiale."
+              },
+              {
+                "@type": "DefinedTerm",
+                "@id": "https://senzalievito.com/glossario#seo",
+                "name": "SEO",
+                "inDefinedTermSet": "https://senzalievito.com/glossario#glossary",
+                "description": "Search Engine Optimization. Insieme di tecniche che migliorano la visibilità di un sito web nei risultati organici dei motori di ricerca."
+              },
+              {
+                "@type": "DefinedTerm",
+                "@id": "https://senzalievito.com/glossario#geo",
+                "name": "GEO",
+                "inDefinedTermSet": "https://senzalievito.com/glossario#glossary",
+                "description": "Generative Engine Optimization. Ottimizzazione dei contenuti per i sistemi di intelligenza artificiale generativa."
+              },
+              {
+                "@type": "DefinedTerm",
+                "@id": "https://senzalievito.com/glossario#ux",
+                "name": "UX",
+                "inDefinedTermSet": "https://senzalievito.com/glossario#glossary",
+                "description": "User Experience. Studio dell'esperienza complessiva dell'utente."
+              },
+              {
+                "@type": "DefinedTerm",
+                "@id": "https://senzalievito.com/glossario#ui",
+                "name": "UI",
+                "inDefinedTermSet": "https://senzalievito.com/glossario#glossary",
+                "description": "User Interface. Parte visibile dell'interfaccia con cui l'utente interagisce."
+              },
+              {
+                "@type": "DefinedTerm",
+                "@id": "https://senzalievito.com/glossario#cta",
+                "name": "CTA",
+                "inDefinedTermSet": "https://senzalievito.com/glossario#glossary",
+                "description": "Call To Action. Elemento che invita l'utente a compiere una specifica azione."
+              },
+              {
+                "@type": "DefinedTerm",
+                "@id": "https://senzalievito.com/glossario#automation",
+                "name": "Automation",
+                "inDefinedTermSet": "https://senzalievito.com/glossario#glossary",
+                "description": "Le automazioni collegate al marketing sono una potente tecnica per ingaggiare gli utenti."
+              },
+              {
+                "@type": "DefinedTerm",
+                "@id": "https://senzalievito.com/glossario#buyer-persona",
+                "name": "Buyer Persona",
+                "inDefinedTermSet": "https://senzalievito.com/glossario#glossary",
+                "description": "Le buyer persona sono rappresentazioni semi-fittizie del cliente ideale: una persona immaginaria che incarna le caratteristiche comuni e salienti dei tuoi clienti."
+              },
+              {
+                "@type": "DefinedTerm",
+                "@id": "https://senzalievito.com/glossario#copywriting",
+                "name": "Copywriting",
+                "inDefinedTermSet": "https://senzalievito.com/glossario#glossary",
+                "description": "Strumento necessario per essere individuabili attraverso i tradizionali motori di ricerca (SEO) e i generatori di risposte AI (AEO e GEO)."
+              },
+              {
+                "@type": "DefinedTerm",
+                "@id": "https://senzalievito.com/glossario#customer-journey",
+                "name": "Customer Journey",
+                "inDefinedTermSet": "https://senzalievito.com/glossario#glossary",
+                "description": "Il viaggio del cliente dal momento in cui entra in contatto con un brand per la prima volta fino a quando diventa un cliente felice o un cliente che necessita supporto."
+              },
+              {
+                "@type": "DefinedTerm",
+                "@id": "https://senzalievito.com/glossario#customer-retention",
+                "name": "Customer Retention",
+                "inDefinedTermSet": "https://senzalievito.com/glossario#glossary",
+                "description": "L'arte di convincere il cliente a tornare ancora e ancora, soddisfacendo la fase di delight della flywheel inbound."
+              },
+              {
+                "@type": "DefinedTerm",
+                "@id": "https://senzalievito.com/glossario#digital-marketing-strategy",
+                "name": "Digital Marketing Strategy",
+                "inDefinedTermSet": "https://senzalievito.com/glossario#glossary",
+                "description": "La strategia che guida ogni azione sui singoli canali, coordinando i messaggi e le modalità di distribuzione del business online."
+              },
+              {
+                "@type": "DefinedTerm",
+                "@id": "https://senzalievito.com/glossario#funnel",
+                "name": "Funnel",
+                "inDefinedTermSet": "https://senzalievito.com/glossario#glossary",
+                "description": "Letteralmente \"imbuto\": rappresenta il processo di trasformazione del pubblico fino ad arrivare a un pool ristretto di possibili clienti."
+              },
+              {
+                "@type": "DefinedTerm",
+                "@id": "https://senzalievito.com/glossario#inbound-marketing",
+                "name": "Inbound Marketing",
+                "inDefinedTermSet": "https://senzalievito.com/glossario#glossary",
+                "description": "Metodologia di marketing in cui non si cercano i clienti in modo attivo, ma si creano contenuti e materiali che facilitano l'avvicinamento spontaneo."
+              },
+              {
+                "@type": "DefinedTerm",
+                "@id": "https://senzalievito.com/glossario#landing-page",
+                "name": "Landing Page",
+                "inDefinedTermSet": "https://senzalievito.com/glossario#glossary",
+                "description": "Una pagina priva di elementi di distrazione o collegamenti esterni, pensata per far completare all'utente l'azione prevista dalla CTA."
+              },
+              {
+                "@type": "DefinedTerm",
+                "@id": "https://senzalievito.com/glossario#metadati",
+                "name": "Metadati",
+                "inDefinedTermSet": "https://senzalievito.com/glossario#glossary",
+                "description": "Informazioni non visibili utilizzate per spiegare ai motori di ricerca i contenuti pubblicati online."
+              },
+              {
+                "@type": "DefinedTerm",
+                "@id": "https://senzalievito.com/glossario#touchpoint",
+                "name": "Touchpoint",
+                "inDefinedTermSet": "https://senzalievito.com/glossario#glossary",
+                "description": "Tutti i punti di contatto del possibile cliente con l'azienda e il suo business, all'interno del customer journey."
+              }
+            ]
+          }
+        ]
       }
     </script>
   </head>
@@ -79,7 +232,7 @@
 
     <header class="liquid-glass" id="site-header">
       <div class="sr-only">
-        <h1>Valentina Battafarano – Digital Strategist & Comunicazione</h1>
+        <p>Valentina Battafarano – Digital Strategist & Comunicazione</p>
       </div>
 
       <a href="/" aria-label="Homepage Senza Lievito">

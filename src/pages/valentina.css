@@ -88,3 +88,16 @@
 .value-icon {
   font-size: var(--text-2xl);
 }
+
+.photo-disclosure {
+  position: absolute;
+  top: var(--spacing-sm);
+  right: var(--spacing-sm);
+  z-index: 2;
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border-radius: var(--radius-pill);
+  background: rgba(30, 10, 25, 0.55);
+  color: #fff;
+  font-size: var(--text-xs);
+  font-weight: var(--font-weight-medium);
+}

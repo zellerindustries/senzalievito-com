@@ -29,23 +29,53 @@
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
-        "@type": "Person",
-        "@id": "https://senzalievito.com/valentina#person",
-        "name": "Valentina Battafarano",
-        "jobTitle": "Founder & Digital Strategist",
-        "url": "https://senzalievito.com/valentina",
-        "worksFor": { "@type": "Organization", "name": "Senza Lievito" },
-        "knowsAbout": [
-          "Digital Marketing",
-          "Social Media Communication",
-          "User Experience",
-          "Copywriting",
-          "Email Marketing"
-        ],
-        "knowsLanguage": ["it", "en", "es", "zh"],
-        "sameAs": [
-          "https://www.linkedin.com/company/digital-senza-lievito/",
-          "https://instagram.com/senza.lievito"
+        "@graph": [
+          {
+            "@type": "Person",
+            "@id": "https://senzalievito.com/valentina#person",
+            "name": "Valentina Battafarano",
+            "jobTitle": "Founder & Digital Strategist",
+            "url": "https://senzalievito.com/valentina",
+            "email": "info@senzalievito.com",
+            "telephone": "+393520345309",
+            "worksFor": { "@id": "https://senzalievito.com/#organization" },
+            "knowsAbout": [
+              "Digital Marketing",
+              "Social Media Communication",
+              "User Experience",
+              "Copywriting",
+              "Email Marketing"
+            ],
+            "knowsLanguage": ["it", "en", "es", "zh"],
+            "sameAs": [
+              "https://www.linkedin.com/company/digital-senza-lievito/",
+              "https://instagram.com/senza.lievito"
+            ]
+          },
+          {
+            "@type": "BreadcrumbList",
+            "@id": "https://senzalievito.com/valentina#breadcrumb",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://senzalievito.com/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Chi Sono",
+                "item": "https://senzalievito.com/chi-sono"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "La mia storia",
+                "item": "https://senzalievito.com/valentina"
+              }
+            ]
+          }
         ]
       }
     </script>
@@ -53,7 +83,7 @@
   <body>
     <header class="liquid-glass" id="site-header">
       <div class="sr-only">
-        <h1>Valentina Battafarano – Digital Strategist & Comunicazione</h1>
+        <p>Valentina Battafarano – Digital Strategist & Comunicazione</p>
       </div>
 
       <a href="/" aria-label="Homepage Senza Lievito">
@@ -96,9 +126,10 @@
       <section class="bento-grid-columns">
         <article class="bento-item bento-item-6">
           <div class="box photo-card glow">
+            <span class="photo-disclosure">Immagine illustrativa</span>
             <img
               src="https://picsum.photos/id/1069/900/1100"
-              alt=""
+              alt="Un'immagine simbolica di curiosità ed esplorazione"
               loading="eager"
             />
             <div class="photo-caption">
@@ -172,9 +203,10 @@
       <section class="bento-grid-columns">
         <article class="bento-item bento-item-6">
           <div class="box photo-card glow">
+            <span class="photo-disclosure">Immagine illustrativa</span>
             <img
               src="https://picsum.photos/id/1060/800/900"
-              alt=""
+              alt="Un momento di pausa e concentrazione, in tema con il racconto"
               loading="lazy"
             />
           </div>
@@ -260,9 +292,10 @@
       <section class="bento-grid-columns">
         <article class="bento-item bento-item-12">
           <div class="box photo-banner glow">
+            <span class="photo-disclosure">Immagine illustrativa</span>
             <img
               src="https://picsum.photos/id/1039/1600/500"
-              alt=""
+              alt="Un paesaggio naturale, scelto come immagine simbolica"
               loading="lazy"
             />
             <div class="photo-banner-scrim">

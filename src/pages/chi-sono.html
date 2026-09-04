@@ -28,28 +28,42 @@
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
-        "@type": "AboutPage",
-        "mainEntity": {
-          "@type": "Person",
-          "name": "Valentina Battafarano",
-          "jobTitle": "Digital Strategist & Consulente Comunicazione",
-          "knowsAbout": [
-            "Digital Marketing",
-            "Social Media Management",
-            "SEO",
-            "Personal Branding",
-            "Inbound Marketing"
-          ],
-          "worksFor": { "@type": "Organization", "name": "Senza Lievito" }
-        },
-        "inLanguage": "it-IT"
+        "@graph": [
+          {
+            "@type": "AboutPage",
+            "@id": "https://senzalievito.com/chi-sono#webpage",
+            "url": "https://senzalievito.com/chi-sono",
+            "mainEntity": {
+              "@id": "https://senzalievito.com/valentina#person"
+            },
+            "inLanguage": "it-IT"
+          },
+          {
+            "@type": "BreadcrumbList",
+            "@id": "https://senzalievito.com/chi-sono#breadcrumb",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://senzalievito.com/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Chi Sono",
+                "item": "https://senzalievito.com/chi-sono"
+              }
+            ]
+          }
+        ]
       }
     </script>
   </head>
   <body>
     <header class="liquid-glass" id="site-header">
       <div class="sr-only">
-        <h1>Valentina Battafarano – Digital Strategist & Comunicazione</h1>
+        <p>Valentina Battafarano – Digital Strategist & Comunicazione</p>
       </div>
 
       <a href="/" aria-label="Homepage Senza Lievito">
@@ -116,6 +130,10 @@
                 >
                   Prenota la tua consulenza
                   <i class="bi bi-envelope-check"></i>
+                </a>
+                <a href="/valentina" class="btn btn-glass btn-soft">
+                  <i class="bi bi-book-half"></i>
+                  La mia storia completa
                 </a>
                 <a
                   href="https://www.linkedin.com/company/digital-senza-lievito/"
@@ -214,6 +232,10 @@
                 Dalla strategia all'azione, ti accompagno in tutte le attività
                 di digital marketing:
               </h2>
+              <p>
+                Se qualche termine non ti è chiaro, dai un'occhiata al
+                <a href="/glossario">glossario del digital marketing</a>.
+              </p>
               <div
                 style="
                   display: grid;

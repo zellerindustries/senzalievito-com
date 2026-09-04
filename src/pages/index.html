@@ -59,12 +59,47 @@
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
-        "@type": "WebPage",
-        "@id": "https://senzalievito.com/#webpage",
-        "url": "https://senzalievito.com/",
-        "name": "Senza Lievito – Valentina Battafarano | Digital Strategy & Comunicazione",
-        "description": "Strategie digitali, branding, SEO e comunicazione online per professionisti e aziende.",
-        "inLanguage": "it-IT"
+        "@graph": [
+          {
+            "@type": "WebPage",
+            "@id": "https://senzalievito.com/#webpage",
+            "url": "https://senzalievito.com/",
+            "name": "Senza Lievito – Valentina Battafarano | Digital Strategy & Comunicazione",
+            "description": "Strategie digitali, branding, SEO e comunicazione online per professionisti e aziende.",
+            "inLanguage": "it-IT",
+            "about": { "@id": "https://senzalievito.com/#organization" }
+          },
+          {
+            "@type": "ProfessionalService",
+            "@id": "https://senzalievito.com/#organization",
+            "name": "Senza Lievito",
+            "url": "https://senzalievito.com/",
+            "logo": "https://senzalievito.com/assets/logo.webp",
+            "image": "https://senzalievito.com/assets/logo.webp",
+            "description": "Consulenza di digital strategy, SEO, social media e comunicazione online per professionisti e aziende.",
+            "founder": { "@id": "https://senzalievito.com/valentina#person" },
+            "email": "info@senzalievito.com",
+            "telephone": "+393520345309",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Malo",
+              "addressRegion": "VI",
+              "addressCountry": "IT"
+            },
+            "sameAs": [
+              "https://www.linkedin.com/company/digital-senza-lievito/",
+              "https://instagram.com/senza.lievito"
+            ],
+            "contactPoint": {
+              "@type": "ContactPoint",
+              "contactType": "customer service",
+              "email": "info@senzalievito.com",
+              "telephone": "+393520345309",
+              "areaServed": "IT",
+              "availableLanguage": ["Italian", "English"]
+            }
+          }
+        ]
       }
     </script>
   </head>
@@ -76,7 +111,7 @@
 
     <header class="liquid-glass" id="site-header">
       <div class="sr-only">
-        <h1>Valentina Battafarano – Digital Strategist & Comunicazione</h1>
+        <p>Valentina Battafarano – Digital Strategist & Comunicazione</p>
       </div>
 
       <a href="/" aria-label="Homepage Senza Lievito">

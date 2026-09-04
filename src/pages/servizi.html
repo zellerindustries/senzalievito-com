@@ -60,12 +60,83 @@
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
-        "@type": "WebPage",
-        "@id": "https://senzalievito.com/servizi#webpage",
-        "url": "https://senzalievito.com/servizi",
-        "name": "Servizi Digital Marketing Strategico",
-        "description": "Digital strategy, SEO, inbound marketing, social media management, funnel, automazioni e personal branding.",
-        "inLanguage": "it-IT"
+        "@graph": [
+          {
+            "@type": "WebPage",
+            "@id": "https://senzalievito.com/servizi#webpage",
+            "url": "https://senzalievito.com/servizi",
+            "name": "Servizi Digital Marketing Strategico",
+            "description": "Digital strategy, SEO, inbound marketing, social media management, funnel, automazioni e personal branding.",
+            "inLanguage": "it-IT",
+            "about": { "@id": "https://senzalievito.com/#organization" }
+          },
+          {
+            "@type": "BreadcrumbList",
+            "@id": "https://senzalievito.com/servizi#breadcrumb",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://senzalievito.com/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Servizi",
+                "item": "https://senzalievito.com/servizi"
+              }
+            ]
+          },
+          {
+            "@type": "Service",
+            "@id": "https://senzalievito.com/servizi#digital-strategy",
+            "name": "Digital Strategy",
+            "provider": { "@id": "https://senzalievito.com/#organization" },
+            "areaServed": "IT",
+            "description": "Analisi di Buyer Persona, Customer Journey e progettazione di Funnel & Automation."
+          },
+          {
+            "@type": "Service",
+            "@id": "https://senzalievito.com/servizi#inbound-marketing",
+            "name": "Inbound Marketing",
+            "provider": { "@id": "https://senzalievito.com/#organization" },
+            "areaServed": "IT",
+            "description": "Attrazione di lead qualificati e conversione in opportunità di business."
+          },
+          {
+            "@type": "Service",
+            "@id": "https://senzalievito.com/servizi#seo-content",
+            "name": "SEO & Content",
+            "provider": { "@id": "https://senzalievito.com/#organization" },
+            "areaServed": "IT",
+            "description": "Contenuti e architetture informative progettati per motori di ricerca e persone."
+          },
+          {
+            "@type": "Service",
+            "@id": "https://senzalievito.com/servizi#social-media",
+            "name": "Social Media Management",
+            "provider": { "@id": "https://senzalievito.com/#organization" },
+            "areaServed": "IT",
+            "description": "Strategia editoriale, gestione contenuti e analisi metriche per i canali social."
+          },
+          {
+            "@type": "Service",
+            "@id": "https://senzalievito.com/servizi#funnel-automation",
+            "name": "Funnel & Automation",
+            "provider": { "@id": "https://senzalievito.com/#organization" },
+            "areaServed": "IT",
+            "description": "Sistemi integrati per accompagnare il cliente dalla scoperta alla conversione."
+          },
+          {
+            "@type": "Service",
+            "@id": "https://senzalievito.com/servizi#personal-branding",
+            "name": "Personal Branding",
+            "provider": { "@id": "https://senzalievito.com/#organization" },
+            "areaServed": "IT",
+            "description": "Gestione della reputazione e autorevolezza digitale su LinkedIn, Instagram, Facebook e sito personale."
+          }
+        ]
       }
     </script>
   </head>
@@ -73,7 +144,7 @@
   <body>
     <header class="liquid-glass" id="site-header">
       <div class="sr-only">
-        <h1>Valentina Battafarano – Digital Strategist & Comunicazione</h1>
+        <p>Valentina Battafarano – Digital Strategist & Comunicazione</p>
       </div>
 
       <a href="/" aria-label="Homepage Senza Lievito">
@@ -204,18 +275,21 @@
               </p>
               <ul class="skills-list">
                 <li>
-                  <i class="bi bi-check2-circle"></i> Buyer Persona & Cliente
+                  <i class="bi bi-check2-circle"></i>
+                  <a href="/glossario#buyer-persona">Buyer Persona</a> & Cliente
                   Ideale
                 </li>
                 <li>
-                  <i class="bi bi-check2-circle"></i> Customer Journey & Analisi
-                  Touchpoint
+                  <i class="bi bi-check2-circle"></i>
+                  <a href="/glossario#customer-journey">Customer Journey</a> &
+                  Analisi Touchpoint
                 </li>
                 <li>
                   <i class="bi bi-check2-circle"></i> Inbound Flywheel Workshop
                 </li>
                 <li>
-                  <i class="bi bi-check2-circle"></i> Funnel & Automation Design
+                  <i class="bi bi-check2-circle"></i>
+                  <a href="/glossario#funnel">Funnel</a> & Automation Design
                 </li>
               </ul>
             </div>

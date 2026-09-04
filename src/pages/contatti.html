@@ -59,12 +59,35 @@
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
-        "@type": "ContactPage",
-        "@id": "https://senzalievito.com/contatti#webpage",
-        "url": "https://senzalievito.com/contatti",
-        "name": "Contatti",
-        "description": "Contatta Valentina Battafarano per consulenze di digital marketing, branding, SEO e comunicazione digitale.",
-        "inLanguage": "it-IT"
+        "@graph": [
+          {
+            "@type": "ContactPage",
+            "@id": "https://senzalievito.com/contatti#webpage",
+            "url": "https://senzalievito.com/contatti",
+            "name": "Contatti",
+            "description": "Contatta Valentina Battafarano per consulenze di digital marketing, branding, SEO e comunicazione digitale.",
+            "inLanguage": "it-IT",
+            "about": { "@id": "https://senzalievito.com/#organization" }
+          },
+          {
+            "@type": "BreadcrumbList",
+            "@id": "https://senzalievito.com/contatti#breadcrumb",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://senzalievito.com/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Contatti",
+                "item": "https://senzalievito.com/contatti"
+              }
+            ]
+          }
+        ]
       }
     </script>
   </head>
@@ -73,7 +96,7 @@
     <!-- Header -->
     <header class="liquid-glass" id="site-header">
       <div class="sr-only">
-        <h1>Valentina Battafarano – Digital Strategist & Comunicazione</h1>
+        <p>Valentina Battafarano – Digital Strategist & Comunicazione</p>
       </div>
 
       <a href="/" aria-label="Homepage Senza Lievito">
