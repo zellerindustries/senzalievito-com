@@ -6,7 +6,9 @@
   "scripts": {
     "start": "npm run build && npx serve ./dist",
     "build": "npx mz b",
-    "format": "npx prettier --write \"./src\""
+    "format": "npx prettier --write \"./src\"",
+    "format:check": "prettier --check ./src",
+    "prepare": "husky"
   },
   "keywords": [],
   "author": "",
@@ -20,6 +22,7 @@
     "minimaz-cli": "^0.5.2"
   },
   "devDependencies": {
+    "husky": "^9.1.7",
     "prettier": "3.8.3",
     "serve": "^14.2.6"
   },
