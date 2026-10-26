@@ -15,6 +15,7 @@
         "dir": "./dist",
         "replace": {
             "../public/": "/public/",
+            "META_ROBOTS:_CONTENT": "noindex,nofollow",
             "<link rel=\"stylesheet\" href=\"styles/bootstrap-icons.css\" />": "",
             "<link rel=\"stylesheet\" href=\"../styles/bootstrap-icons.css\" />": "",
             "../node_modules/bootstrap-icons/font/fonts/bootstrap-icons.woff2": "/fonts/bootstrap-icons.woff2",
