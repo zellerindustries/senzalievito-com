@@ -1,0 +1,66 @@
+/* =========================
+   LATE BASE RULES
+   Kept last on purpose: these typography/reset rules relied on loading after
+   responsive.css (same-specificity font-size overrides), hover.css (a color)
+   and forms.css (input :focus-visible outline). Moving them earlier would
+   change rendering.
+========================= */
+
+body {
+  font-family: var(--font-primary);
+  font-weight: var(--font-weight-regular);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-base);
+  color: var(--color-text);
+
+  /* Improve font rendering consistency across platforms */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  background: var(--color-bg);
+}
+
+h1 {
+  font-size: var(--font-size-xxl);
+}
+
+h2 {
+  font-size: var(--font-size-xl);
+}
+
+h3 {
+  font-size: var(--font-size-lg);
+}
+
+h4 {
+  font-size: var(--font-size-base);
+}
+
+h5 {
+  font-size: var(--font-size-sm);
+}
+
+h6 {
+  font-size: var(--font-size-xs);
+}
+
+p {
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-base);
+
+  margin: 0 0 var(--spacing-md) 0;
+}
+
+a {
+  color: var(--color-magenta);
+  text-decoration: none;
+
+  transition:
+    color var(--duration-fast) var(--ease-standard),
+    opacity var(--duration-fast) var(--ease-standard);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}

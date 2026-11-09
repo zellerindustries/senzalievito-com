@@ -10,14 +10,14 @@
 
   padding: var(--spacing-xs) var(--spacing-sm);
 
-  font-size: var(--text-sm);
+  font-size: var(--font-size-sm);
   font-weight: var(--font-weight-bold);
   line-height: 1;
 
   border-radius: var(--radius-pill);
   border: var(--pill-border-width) solid var(--glass-border);
 
-  background: var(--surface-base);
+  background: var(--color-surface);
   color: var(--text-secondary);
 
   box-shadow: var(--glass-inner-border), var(--glass-shadow);
@@ -44,7 +44,7 @@
 
 .pill-primary {
   background: var(--gradient-primary);
-  color: var(--text-inverse);
+  color: var(--color-text-inverse);
 }
 
 .pill-secondary {

@@ -45,7 +45,7 @@
   padding: var(--spacing-md) var(--spacing-xs);
   gap: 3px;
 
-  color: var(--text-muted);
+  color: var(--color-text-muted);
   text-decoration: none;
   border-radius: var(--radius-pill);
   transition: all var(--duration-base) var(--ease-standard);
@@ -59,14 +59,14 @@
 }
 
 .bottom-bar-item span {
-  font-size: var(--text-xs);
+  font-size: var(--font-size-xs);
   font-weight: var(--font-weight-medium);
   letter-spacing: -0.01em;
 }
 
 /* Hover, Focus, & Active States */
 .bottom-bar-item:hover {
-  color: var(--text-primary);
+  color: var(--color-text);
   background: var(--surface-hover);
 }
 
@@ -88,21 +88,4 @@
 
 .bottom-bar-item.active .icon {
   transform: scale(1.1);
-}
-
-/* Responsive display rule */
-@media (min-width: 769px) {
-  .bottom-bar {
-    display: none;
-  }
-}
-
-/* Accessibility: Respect user motion preferences */
-@media (prefers-reduced-motion: reduce) {
-  .bottom-bar,
-  .bottom-bar-item,
-  .bottom-bar-item .icon {
-    transition: none !important;
-    transform: none !important;
-  }
 }

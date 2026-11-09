@@ -66,27 +66,3 @@
 .gap-lg {
   gap: var(--spacing-lg);
 }
-
-/* ==========================================
-   RESPONSIVE BEHAVIOR (MOBILE-FIRST)
-========================================== */
-
-/* Tablet and down */
-@media (max-width: 768px) {
-  /* Stack columns on mobile automatically when needed */
-  .col-responsive {
-    flex-direction: column;
-  }
-
-  /* Keep row but allow wrap for safety */
-  .row-responsive {
-    flex-wrap: wrap;
-  }
-}
-
-/* Small mobile refinement */
-@media (max-width: 480px) {
-  .row {
-    flex-wrap: wrap;
-  }
-}

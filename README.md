@@ -2,7 +2,7 @@
 
 Static marketing site for **Senza Lievito** — Valentina Battafarano, digital strategy & communication
 consultant. Italian-language (`lang="it"`), no framework: plain HTML/CSS/TypeScript pages bundled and
-minified into static output with [`minimaz-cli`](https://www.npmjs.com/package/minimaz-cli).
+minified into static output with [`@minimaz/sitekit`](https://www.npmjs.com/package/@minimaz/sitekit).
 
 ## Requirements
 
@@ -19,7 +19,7 @@ npm run start   # builds ./src into ./dist, then serves it locally via `serve`
 
 | Command          | Description                               |
 | ---------------- | ----------------------------------------- |
-| `npm run build`  | Builds `./src` into `./dist` (`npx mz b`) |
+| `npm run build`  | Builds `./src` into `./dist` (`mz b --overwrite`) |
 | `npm run start`  | Builds, then serves `./dist` locally      |
 | `npm run format` | Formats `./src` with Prettier             |
 

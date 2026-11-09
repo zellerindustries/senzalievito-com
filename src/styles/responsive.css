@@ -2,10 +2,175 @@
    RESPONSIVE / MEDIA QUERIES
 ========================= */
 
+/* ==========================================================================
+   3. RESPONSIVE BREAKPOINTS
+   ========================================================================== */
+
+/* Tablet Layout: Downscaling to a 6-column system */
+@media (max-width: 1024px) {
+  .bento-grid-columns {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    grid-auto-rows: minmax(140px, auto); /* Prevents vertical stretching */
+  }
+
+  /* Items expand to prevent squishing into narrow columns */
+  .bento-item-4,
+  .bento-item-6,
+  .bento-item-8,
+  .bento-item-12,
+  .bento-item-featured,
+  .bento-item-left-top,
+  .bento-item-left-bottom {
+    grid-column: span 6;
+    grid-row: auto;
+  }
+}
+
+/* Mobile Layout: Linear stacked flow */
+@media (max-width: 480px) {
+  /* Dropping grid mechanics to let content drive natural height */
+  .bento-grid-columns {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+  }
+
+  /* Resetting dimensions to fix the "long and narrow" squished card bug */
+  .bento-item,
+  .bento-item-4,
+  .bento-item-6,
+  .bento-item-8,
+  .bento-item-12,
+  .bento-item-featured,
+  .bento-item-left-top,
+  .bento-item-left-bottom {
+    grid-column: auto;
+    grid-row: auto;
+    height: auto;
+  }
+}
+
+/* Responsive display rule */
+@media (min-width: 769px) {
+  .bottom-bar {
+    display: none;
+  }
+}
+
+/* ==========================================
+   RESPONSIVE BEHAVIOR (MOBILE-FIRST)
+========================================== */
+
+/* Tablet and down */
+@media (max-width: 768px) {
+  /* Stack columns on mobile automatically when needed */
+  .col-responsive {
+    flex-direction: column;
+  }
+
+  /* Keep row but allow wrap for safety */
+  .row-responsive {
+    flex-wrap: wrap;
+  }
+}
+
+/* Small mobile refinement */
+@media (max-width: 480px) {
+  .row {
+    flex-wrap: wrap;
+  }
+}
+
+/* Media Query Desktop-only per l'overflow (Evita glitch visivi pre-animazione) */
+@media (min-width: 769px) {
+  #site-header {
+    overflow: hidden;
+  }
+}
+/* =========================
+   MOBILE NAVIGATION (BUBBLE POP EFFECT)
+========================= */
+@media (max-width: 768px) {
+  #site-header {
+    justify-content: space-between;
+  }
+  #site-header .menu-toggle {
+    display: block;
+  }
+
+  #site-header .menu-toggle[aria-expanded="true"] {
+    position: fixed;
+    top: calc(var(--spacing-md) + var(--spacing-sm));
+    right: calc(var(--spacing-sm) + var(--spacing-md));
+    z-index: 10000;
+  }
+
+  #site-header nav {
+    position: fixed !important;
+    inset: 0 !important;
+    background: var(--header-bg);
+    -webkit-backdrop-filter: blur(24px);
+    backdrop-filter: blur(24px);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-lg);
+    opacity: 0;
+    pointer-events: none;
+    visibility: hidden;
+    transition:
+      opacity 0.4s ease,
+      visibility 0.4s ease;
+    z-index: 9999;
+  }
+
+  #site-header nav.is-active {
+    opacity: 1;
+    pointer-events: auto;
+    visibility: visible;
+    padding: var(--spacing-md);
+  }
+
+  #site-header nav .btn {
+    padding: var(--spacing-md) var(--spacing-xl) !important;
+    opacity: 0;
+    transform: scale(0.4) translateY(-40px);
+    will-change: transform, opacity;
+    transition:
+      opacity 0.4s ease,
+      transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+  #site-header nav.is-active .btn {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+  /* Ritardi sequenziali (Staggered Delay) */
+  #site-header nav .btn:nth-child(1) {
+    transition-delay: 0.1s;
+  }
+  #site-header nav .btn:nth-child(2) {
+    transition-delay: 0.18s;
+  }
+  #site-header nav .btn:nth-child(3) {
+    transition-delay: 0.26s;
+  }
+  #site-header nav .btn:nth-child(4) {
+    transition-delay: 0.34s;
+  }
+  #site-header nav .btn:nth-child(5) {
+    transition-delay: 0.42s;
+  }
+  #site-header nav .btn:nth-child(6) {
+    transition-delay: 0.5s;
+  }
+}
+
 /* ------------------------
    Mobile (Smartphone)
 ------------------------ */
-@media (max-width: 640px) {
+@media (max-width: 480px) {
   /*
     .container {
         padding-block: var(--spacing-lg);
@@ -31,31 +196,31 @@
   }
 
   body {
-    font-size: var(--text-sm);
+    font-size: var(--font-size-sm);
   }
 
   h1 {
-    font-size: var(--text-xl);
+    font-size: var(--font-size-xl);
   }
 
   h2 {
-    font-size: var(--text-lg);
+    font-size: var(--font-size-lg);
   }
 
   h3 {
-    font-size: var(--text-md);
+    font-size: var(--font-size-base);
   }
 
   h4 {
-    font-size: var(--text-sm);
+    font-size: var(--font-size-sm);
   }
 
   h5 {
-    font-size: var(--text-xs);
+    font-size: var(--font-size-xs);
   }
 
   p {
-    font-size: var(--text-sm);
+    font-size: var(--font-size-sm);
   }
 
   .btn {

@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "npm run build && npx serve ./dist",
-    "build": "npx mz b",
+    "build": "mz b --overwrite",
     "format": "npx prettier --write \"./src\"",
     "format:check": "prettier --check ./src",
     "prepare": "husky || true"
@@ -18,8 +18,8 @@
     "node": "24.x"
   },
   "dependencies": {
-    "bootstrap-icons": "^1.13.1",
-    "minimaz-cli": "^0.5.2"
+    "@minimaz/sitekit": "^0.2.0",
+    "bootstrap-icons": "^1.13.1"
   },
   "devDependencies": {
     "husky": "^9.1.7",
@@ -27,6 +27,6 @@
     "serve": "^14.2.6"
   },
   "allowScripts": {
-    "esbuild@0.28.2": true
+    "@minimaz/sitekit@0.2.0": true
   }
 }

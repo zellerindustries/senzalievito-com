@@ -30,7 +30,7 @@
 }
 
 .photo-caption blockquote {
-  font-size: var(--text-lg);
+  font-size: var(--font-size-lg);
   font-weight: var(--font-weight-bold);
 }
 
@@ -70,7 +70,7 @@
 .photo-banner-scrim blockquote {
   max-width: 42ch;
   color: #fff;
-  font-size: var(--text-xl);
+  font-size: var(--font-size-xl);
   font-weight: var(--font-weight-bold);
 }
 
@@ -80,13 +80,13 @@
 }
 
 .stat-number {
-  font-size: var(--text-2xl);
+  font-size: var(--font-size-xxl);
   font-weight: var(--font-weight-black);
   line-height: 1;
 }
 
 .value-icon {
-  font-size: var(--text-2xl);
+  font-size: var(--font-size-xxl);
 }
 
 .photo-disclosure {
@@ -98,6 +98,6 @@
   border-radius: var(--radius-pill);
   background: rgba(30, 10, 25, 0.55);
   color: #fff;
-  font-size: var(--text-xs);
+  font-size: var(--font-size-xs);
   font-weight: var(--font-weight-medium);
 }

@@ -14,13 +14,13 @@
   overflow: hidden;
   cursor: pointer;
   padding: var(--spacing-md) var(--spacing-xl);
-  font-family: var(--font-base);
-  font-size: var(--text-sm);
+  font-family: var(--font-primary);
+  font-size: var(--font-size-sm);
   font-weight: var(--font-weight-bold);
   line-height: 1;
   white-space: nowrap;
   text-decoration: none;
-  color: var(--text-primary) !important;
+  color: var(--color-text) !important;
   background: var(--surface-elevated);
   border: 1px solid var(--glass-border-strong);
   border-radius: var(--radius-pill);
@@ -50,7 +50,7 @@
 
 /* STATES */
 .btn:hover {
-  color: var(--text-inverse);
+  color: var(--color-text-inverse);
   border-color: rgba(255, 255, 255, 0.8);
   transform: translateY(-2px);
   filter: saturate(1.08);
@@ -90,13 +90,13 @@
 
 /* PRIMARY */
 .btn-primary {
-  color: var(--text-inverse) !important;
+  color: var(--color-text-inverse) !important;
   background: var(--gradient-primary);
   border-color: transparent;
 }
 
 .btn-cta {
-  color: var(--text-primary) !important;
+  color: var(--color-text) !important;
   background: var(--gradient-accent) !important;
   border: 0 !important;
   box-shadow: 0 0 20px rgba(255, 105, 180, 0.25) !important;
@@ -111,7 +111,7 @@
 
 .btn-outline:hover {
   background: var(--surface-hover);
-  color: var(--text-primary);
+  color: var(--color-text);
 }
 
 /* GRADIENT VARIANTS */
@@ -128,19 +128,19 @@
 }
 
 .btn-gradient-pink {
-  color: var(--text-inverse);
+  color: var(--color-text-inverse);
   background-image: var(--gradient-primary);
 }
 .btn-gradient-tropical {
-  color: var(--text-inverse);
+  color: var(--color-text-inverse);
   background-image: var(--gradient-tropical);
 }
 .btn-gradient-candy {
-  color: var(--text-inverse);
+  color: var(--color-text-inverse);
   background-image: var(--gradient-candy);
 }
 .btn-gradient-velvet {
-  color: var(--text-inverse) !important;
+  color: var(--color-text-inverse) !important;
   background-image: var(--gradient-velvet);
 }
 .btn-gradient-meringue {
@@ -247,7 +247,7 @@
 }
 
 .btn-neon {
-  color: var(--text-inverse) !important;
+  color: var(--color-text-inverse) !important;
   background: linear-gradient(135deg, hsl(330 20% 12%), hsl(330 18% 18%));
   border: 1px solid rgba(255, 255, 255, 0.15);
   box-shadow:
@@ -290,7 +290,7 @@
 }
 .btn-ghost:hover {
   background: var(--surface-interactive);
-  color: var(--text-primary);
+  color: var(--color-text);
 }
 
 .btn-ghost:active {

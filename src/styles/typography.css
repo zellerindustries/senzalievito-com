@@ -2,20 +2,6 @@
 /* BASE TYPOGRAPHY               */
 /* ============================= */
 
-body {
-  font-family: var(--font-base);
-  font-weight: var(--font-weight-regular);
-  font-size: var(--text-md);
-  line-height: var(--line-height);
-  color: var(--text-primary);
-
-  /* Improve font rendering consistency across platforms */
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-
-  background: var(--color-bg);
-}
-
 /* ============================= */
 /* HEADINGS                      */
 /* ============================= */
@@ -26,50 +12,19 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: var(--font-base);
+  font-family: var(--font-primary);
   font-weight: var(--font-weight-bold);
   line-height: 1.2;
   letter-spacing: -0.02em;
 
-  color: var(--text-primary);
+  color: var(--color-text);
 }
 
 /* Maintain a consistent visual hierarchy across heading levels */
 
-h1 {
-  font-size: var(--text-2xl);
-}
-
-h2 {
-  font-size: var(--text-xl);
-}
-
-h3 {
-  font-size: var(--text-lg);
-}
-
-h4 {
-  font-size: var(--text-md);
-}
-
-h5 {
-  font-size: var(--text-sm);
-}
-
-h6 {
-  font-size: var(--text-xs);
-}
-
 /* ============================= */
 /* BODY TEXT                     */
 /* ============================= */
-
-p {
-  font-size: var(--text-md);
-  line-height: var(--line-height);
-
-  margin: 0 0 var(--spacing-md) 0;
-}
 
 /* Prevent unnecessary spacing in stacked text layouts */
 
@@ -81,28 +36,12 @@ p:last-child {
 /* LINKS                         */
 /* ============================= */
 
-a {
-  color: var(--color-magenta);
-  text-decoration: none;
-
-  transition:
-    color var(--duration-fast) var(--ease-standard),
-    opacity var(--duration-fast) var(--ease-standard);
-}
-
-/* Preserve visible keyboard focus for accessibility */
-
-a:focus-visible {
-  outline: var(--focus-ring);
-  outline-offset: 2px;
-}
-
 /* ============================= */
 /* TEXT UTILITIES                */
 /* ============================= */
 
 .text-muted {
-  color: var(--text-muted);
+  color: var(--color-text-muted);
 }
 
 .text-center {
@@ -110,11 +49,11 @@ a:focus-visible {
 }
 
 .text-large {
-  font-size: var(--text-lg);
+  font-size: var(--font-size-lg);
 }
 
 small {
-  font-size: var(--text-sm);
+  font-size: var(--font-size-sm);
 }
 
 .highlight {
@@ -134,5 +73,5 @@ small {
 .text-light h4,
 .text-light h5,
 .text-light h6 {
-  color: var(--text-inverse);
+  color: var(--color-text-inverse);
 }

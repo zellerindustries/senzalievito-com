@@ -32,11 +32,11 @@ body {
   min-height: 100vh;
   min-height: 100dvh;
 
-  font-family: var(--font-base);
-  font-size: var(--text-md);
-  line-height: var(--line-height);
+  font-family: var(--font-primary);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-base);
   background: var(--color-bg);
-  color: var(--text-primary);
+  color: var(--color-text);
 
   /* Performance & Rendering */
   text-rendering: optimizeSpeed;
@@ -89,11 +89,6 @@ textarea {
 /* Accessibility */
 :focus:not(:focus-visible) {
   outline: none;
-}
-
-:focus-visible {
-  outline: 2px solid var(--color-primary);
-  outline-offset: 2px;
 }
 
 /* Selection */

@@ -1,4 +1,61 @@
 :root {
+  /* Colors */
+  --color-bg: hsl(45 45% 97%);
+  --color-bg-alt: hsl(325 35% 96%);
+  --color-surface: rgba(255, 255, 255, 0.45);
+  --color-text: var(--color-velvet);
+  --color-text-muted: hsl(320 16% 42%);
+  --color-text-inverse: #ffffff;
+  --color-primary: var(--color-pink);
+  --color-primary-hover: var(--color-magenta);
+  --color-accent: var(--color-green);
+  --color-accent-hover: hsl(148 70% 54%);
+  --color-border: rgba(0, 0, 0, 0.08);
+  --color-overlay: rgba(0, 0, 0, 0.5);
+  --color-success: hsl(148 60% 48%);
+  --color-error: hsl(0 80% 60%);
+  --color-focus: var(--color-primary);
+
+  /* Fonts */
+  --font-primary: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-secondary: var(--font-primary);
+  --font-size-xs: clamp(0.75rem, 0.72rem + 0.12vw, 0.82rem);
+  --font-size-sm: clamp(0.875rem, 0.84rem + 0.18vw, 0.95rem);
+  --font-size-base: clamp(1rem, 0.96rem + 0.22vw, 1.08rem);
+  --font-size-lg: clamp(1.15rem, 1.08rem + 0.4vw, 1.3rem);
+  --font-size-xl: clamp(1.45rem, 1.3rem + 0.7vw, 1.75rem);
+  --font-size-xxl: clamp(1.9rem, 1.7rem + 1vw, 2.3rem);
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-bold: 600;
+  --line-height-base: 1.6;
+  --line-height-heading: 1.2;
+
+  /* Spacing */
+  --spacing-xs: clamp(0.4rem, 0.3rem + 0.3vw, 0.6rem);
+  --spacing-sm: clamp(0.6rem, 0.5rem + 0.4vw, 0.9rem);
+  --spacing-md: clamp(1rem, 0.8rem + 0.8vw, 1.4rem);
+  --spacing-lg: clamp(1.4rem, 1rem + 1vw, 2rem);
+  --spacing-xl: clamp(2rem, 1.5rem + 2vw, 3rem);
+  --spacing-xxl: clamp(3rem, 2rem + 3vw, 4.5rem);
+  --spacing-section: clamp(3rem, 2rem + 5vw, 6rem);
+
+  /* Shape and effects */
+  --radius-sm: 8px;
+  --radius-md: 20px;
+  --radius-lg: 32px;
+  --radius-pill: 999px;
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.04);
+  --shadow-md: var(--glass-shadow);
+  --shadow-lg: var(--glass-shadow-strong);
+  --transition-fast: var(--duration-fast) var(--ease-standard);
+  --transition-base: var(--duration-base) var(--ease-standard);
+
+  /* Layout */
+  --max-width: 1400px;
+  --header-height: 4rem;
+
+  /* SITE-SPECIFIC TOKENS */
   /* =========================================================
       CORE BRAND PALETTE
    ========================================================= */
@@ -25,17 +82,13 @@
       SEMANTIC COLOR SYSTEM
    ========================================================= */
 
-  --color-primary: var(--color-pink);
   --color-secondary: var(--color-yellow-soft);
-  --color-accent: var(--color-green);
   --color-highlight: var(--color-magenta);
 
   /* =========================================================
       BACKGROUND SYSTEM
    ========================================================= */
 
-  --color-bg: hsl(45 45% 97%);
-  --color-bg-soft: hsl(325 35% 96%);
   --color-bg-mint: hsl(145 30% 95%);
 
   --neutral-warm: hsl(35 20% 92%);
@@ -46,15 +99,11 @@
       TEXT SYSTEM
    ========================================================= */
 
-  --text-primary: var(--color-velvet);
   --text-secondary: hsl(320 22% 28%);
-  --text-muted: hsl(320 16% 42%);
   --text-disabled: hsl(320 8% 66%);
 
   --text-strong: hsl(320 40% 8%);
   --text-heading: hsl(320 45% 5%);
-
-  --text-inverse: #ffffff;
 
   --text-on-primary: #ffffff;
   --text-on-secondary: hsl(320 35% 12%);
@@ -73,7 +122,6 @@
       SURFACES
    ========================================================= */
 
-  --surface-base: rgba(255, 255, 255, 0.45);
   --surface-elevated: rgba(255, 255, 255, 0.65);
 
   --surface-glass: rgba(255, 255, 255, 0.22);
@@ -143,7 +191,6 @@
    ========================================================= */
 
   --border-subtle: rgba(0, 0, 0, 0.04);
-  --border-base: rgba(0, 0, 0, 0.08);
   --border-strong: rgba(0, 0, 0, 0.15);
 
   --border-glass: var(--glass-border);
@@ -153,9 +200,7 @@
       STATE COLORS
    ========================================================= */
 
-  --color-success: hsl(148 60% 48%);
   --color-warning: hsl(46 90% 54%);
-  --color-danger: hsl(0 80% 60%);
   --color-info: hsl(200 85% 56%);
 
   /* =========================================================
@@ -215,7 +260,7 @@
 
   --gradient-danger-glass: linear-gradient(
     135deg,
-    var(--color-danger),
+    var(--color-error),
     hsl(0 80% 75%)
   );
 
@@ -375,52 +420,25 @@
       TYPOGRAPHY
    ========================================================= */
 
-  --font-base: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-
-  --text-xs: clamp(0.75rem, 0.72rem + 0.12vw, 0.82rem);
-  --text-sm: clamp(0.875rem, 0.84rem + 0.18vw, 0.95rem);
-  --text-md: clamp(1rem, 0.96rem + 0.22vw, 1.08rem);
-  --text-lg: clamp(1.15rem, 1.08rem + 0.4vw, 1.3rem);
-  --text-xl: clamp(1.45rem, 1.3rem + 0.7vw, 1.75rem);
-  --text-2xl: clamp(1.9rem, 1.7rem + 1vw, 2.3rem);
-
-  --font-weight-regular: 400;
-  --font-weight-medium: 500;
-  --font-weight-bold: 600;
   --font-weight-black: 700;
-
-  --line-height: 1.6;
 
   /* =========================================================
       SPACING
    ========================================================= */
 
-  --spacing-xs: clamp(0.4rem, 0.3rem + 0.3vw, 0.6rem);
-  --spacing-sm: clamp(0.6rem, 0.5rem + 0.4vw, 0.9rem);
-  --spacing-md: clamp(1rem, 0.8rem + 0.8vw, 1.4rem);
-  --spacing-lg: clamp(1.4rem, 1rem + 1vw, 2rem);
-  --spacing-xl: clamp(2rem, 1.5rem + 2vw, 3rem);
-  --spacing-xxl: clamp(3rem, 2rem + 3vw, 4.5rem);
-
-  --spacing-section: clamp(3rem, 2rem + 5vw, 6rem);
   --spacing-inline: clamp(1rem, 0.5rem + 2vw, 2rem);
 
   /* =========================================================
       LAYOUT
    ========================================================= */
 
-  --container-max: 1400px;
   --layout-gap: 2rem;
 
   /* =========================================================
       RADIUS
    ========================================================= */
 
-  --radius-sm: 8px;
-  --radius-md: 20px;
-  --radius-lg: 32px;
   --radius-xl: 42px;
-  --radius-pill: 999px;
 
   /* =========================================================
       ACCESSIBILITY
@@ -436,4 +454,6 @@
   --backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate));
 
   color-scheme: light;
+
+  /* BREAKPOINTS: 480 / 768 / 1024 (reference only) */
 }

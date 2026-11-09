@@ -66,97 +66,12 @@
 /* Toggle Menu */
 #site-header .menu-toggle {
   display: none;
-  color: var(--text-primary);
-  font-size: var(--text-xl);
+  color: var(--color-text);
+  font-size: var(--font-size-xl);
   background: transparent;
   border: none;
   cursor: pointer;
   z-index: 10000;
-}
-/* Media Query Desktop-only per l'overflow (Evita glitch visivi pre-animazione) */
-@media (min-width: 769px) {
-  #site-header {
-    overflow: hidden;
-  }
-}
-/* =========================
-   MOBILE NAVIGATION (BUBBLE POP EFFECT)
-========================= */
-@media (max-width: 768px) {
-  #site-header {
-    justify-content: space-between;
-  }
-  #site-header .menu-toggle {
-    display: block;
-  }
-
-  #site-header .menu-toggle[aria-expanded="true"] {
-    position: fixed;
-    top: calc(var(--spacing-md) + var(--spacing-sm));
-    right: calc(var(--spacing-sm) + var(--spacing-md));
-    z-index: 10000;
-  }
-
-  #site-header nav {
-    position: fixed !important;
-    inset: 0 !important;
-    background: var(--header-bg);
-    -webkit-backdrop-filter: blur(24px);
-    backdrop-filter: blur(24px);
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: var(--spacing-lg);
-    opacity: 0;
-    pointer-events: none;
-    visibility: hidden;
-    transition:
-      opacity 0.4s ease,
-      visibility 0.4s ease;
-    z-index: 9999;
-  }
-
-  #site-header nav.is-active {
-    opacity: 1;
-    pointer-events: auto;
-    visibility: visible;
-    padding: var(--spacing-md);
-  }
-
-  #site-header nav .btn {
-    padding: var(--spacing-md) var(--spacing-xl) !important;
-    opacity: 0;
-    transform: scale(0.4) translateY(-40px);
-    will-change: transform, opacity;
-    transition:
-      opacity 0.4s ease,
-      transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
-  }
-  #site-header nav.is-active .btn {
-    opacity: 1;
-    transform: scale(1) translateY(0);
-  }
-  /* Ritardi sequenziali (Staggered Delay) */
-  #site-header nav .btn:nth-child(1) {
-    transition-delay: 0.1s;
-  }
-  #site-header nav .btn:nth-child(2) {
-    transition-delay: 0.18s;
-  }
-  #site-header nav .btn:nth-child(3) {
-    transition-delay: 0.26s;
-  }
-  #site-header nav .btn:nth-child(4) {
-    transition-delay: 0.34s;
-  }
-  #site-header nav .btn:nth-child(5) {
-    transition-delay: 0.42s;
-  }
-  #site-header nav .btn:nth-child(6) {
-    transition-delay: 0.5s;
-  }
 }
 /* =========================
    MENU OVERLAY

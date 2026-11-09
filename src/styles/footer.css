@@ -34,8 +34,8 @@
 
 /* base link style (single source of truth) */
 #site-footer nav[aria-label^="Footer menu"] a {
-  font-size: var(--text-sm);
-  color: var(--text-muted);
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
   text-decoration: none;
   font-weight: var(--font-weight-medium);
 
@@ -52,9 +52,9 @@
 ========================= */
 
 #footer-legal {
-  color: var(--text-muted);
+  color: var(--color-text-muted);
   opacity: 0.8;
-  font-size: var(--text-xs);
+  font-size: var(--font-size-xs);
 }
 
 /* =========================
@@ -66,7 +66,7 @@
   margin-bottom: var(--spacing-sm);
 
   border-bottom: 1px solid var(--border-glass);
-  color: var(--text-primary);
-  font-size: var(--text-sm);
+  color: var(--color-text);
+  font-size: var(--font-size-sm);
   font-weight: var(--font-weight-bold);
 }
