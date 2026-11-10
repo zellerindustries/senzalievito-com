@@ -1,19 +1,19 @@
 :root {
   /* Colors */
-  --color-bg: hsl(45 45% 97%);
-  --color-bg-alt: hsl(325 35% 96%);
+  --color-bg: hsl(45deg 45% 97%);
+  --color-bg-alt: hsl(325deg 35% 96%);
   --color-surface: rgba(255, 255, 255, 0.45);
   --color-text: var(--color-velvet);
-  --color-text-muted: hsl(320 16% 42%);
+  --color-text-muted: hsl(320deg 16% 42%);
   --color-text-inverse: #ffffff;
   --color-primary: var(--color-pink);
   --color-primary-hover: var(--color-magenta);
   --color-accent: var(--color-green);
-  --color-accent-hover: hsl(148 70% 54%);
+  --color-accent-hover: hsl(148deg 70% 54%);
   --color-border: rgba(0, 0, 0, 0.08);
   --color-overlay: rgba(0, 0, 0, 0.5);
-  --color-success: hsl(148 60% 48%);
-  --color-error: hsl(0 80% 60%);
+  --color-success: hsl(148deg 60% 48%);
+  --color-error: hsl(0deg 80% 60%);
   --color-focus: var(--color-primary);
 
   /* Fonts */
@@ -60,23 +60,23 @@
       CORE BRAND PALETTE
    ========================================================= */
 
-  --color-pink: hsl(325 86% 73%);
-  --color-pink-light: hsl(325 90% 86%);
-  --color-pink-soft: hsl(326 85% 92%);
-  --color-magenta: hsl(332 88% 68%);
-  --color-rose: hsl(342 84% 78%);
+  --color-pink: hsl(325deg 86% 73%);
+  --color-pink-light: hsl(325deg 90% 86%);
+  --color-pink-soft: hsl(326deg 85% 92%);
+  --color-magenta: hsl(332deg 88% 68%);
+  --color-rose: hsl(342deg 84% 78%);
 
-  --color-yellow: hsl(46 92% 68%);
-  --color-yellow-soft: hsl(46 90% 86%);
-  --color-gold: hsl(40 88% 64%);
-  --color-cream: hsl(50 80% 95%);
+  --color-yellow: hsl(46deg 92% 68%);
+  --color-yellow-soft: hsl(46deg 90% 86%);
+  --color-gold: hsl(40deg 88% 64%);
+  --color-cream: hsl(50deg 80% 95%);
 
-  --color-green: hsl(148 78% 66%);
-  --color-green-soft: hsl(148 72% 86%);
-  --color-mint: hsl(158 74% 78%);
-  --color-lime: hsl(98 78% 68%);
+  --color-green: hsl(148deg 78% 66%);
+  --color-green-soft: hsl(148deg 72% 86%);
+  --color-mint: hsl(158deg 74% 78%);
+  --color-lime: hsl(98deg 78% 68%);
 
-  --color-velvet: hsl(330 60% 28%);
+  --color-velvet: hsl(330deg 60% 28%);
 
   /* =========================================================
       SEMANTIC COLOR SYSTEM
@@ -89,28 +89,28 @@
       BACKGROUND SYSTEM
    ========================================================= */
 
-  --color-bg-mint: hsl(145 30% 95%);
+  --color-bg-mint: hsl(145deg 30% 95%);
 
-  --neutral-warm: hsl(35 20% 92%);
-  --neutral-cream: hsl(45 30% 95%);
+  --neutral-warm: hsl(35deg 20% 92%);
+  --neutral-cream: hsl(45deg 30% 95%);
   --neutral-soft: rgba(255, 255, 255, 0.65);
 
   /* =========================================================
       TEXT SYSTEM
    ========================================================= */
 
-  --text-secondary: hsl(320 22% 28%);
-  --text-disabled: hsl(320 8% 66%);
+  --text-secondary: hsl(320deg 22% 28%);
+  --text-disabled: hsl(320deg 8% 66%);
 
-  --text-strong: hsl(320 40% 8%);
-  --text-heading: hsl(320 45% 5%);
+  --text-strong: hsl(320deg 40% 8%);
+  --text-heading: hsl(320deg 45% 5%);
 
   --text-on-primary: #ffffff;
-  --text-on-secondary: hsl(320 35% 12%);
-  --text-on-accent: hsl(148 50% 10%);
+  --text-on-secondary: hsl(320deg 35% 12%);
+  --text-on-accent: hsl(148deg 50% 10%);
 
   --text-on-success: #fff;
-  --text-on-warning: hsl(46 50% 10%);
+  --text-on-warning: hsl(46deg 50% 10%);
   --text-on-danger: #fff;
   --text-on-info: #fff;
 
@@ -200,8 +200,8 @@
       STATE COLORS
    ========================================================= */
 
-  --color-warning: hsl(46 90% 54%);
-  --color-info: hsl(200 85% 56%);
+  --color-warning: hsl(46deg 90% 54%);
+  --color-info: hsl(200deg 85% 56%);
 
   /* =========================================================
       GRADIENTS (First block: Vibrant UI & Active Buttons)
@@ -221,9 +221,9 @@
 
   --gradient-tropical: linear-gradient(
     135deg,
-    hsl(325 90% 86%) 0%,
-    hsl(46 95% 86%) 50%,
-    hsl(158 80% 84%) 100%
+    hsl(325deg 90% 86%) 0%,
+    hsl(46deg 95% 86%) 50%,
+    hsl(158deg 80% 84%) 100%
   );
 
   --gradient-rose-water: linear-gradient(
@@ -240,28 +240,28 @@
 
   --gradient-candy: linear-gradient(
     45deg,
-    hsl(325 95% 88%) 0%,
-    hsl(342 90% 86%) 33%,
-    hsl(46 95% 86%) 66%,
-    hsl(325 95% 90%) 100%
+    hsl(325deg 95% 88%) 0%,
+    hsl(342deg 90% 86%) 33%,
+    hsl(46deg 95% 86%) 66%,
+    hsl(325deg 95% 90%) 100%
   );
 
   --gradient-velvet: linear-gradient(
     135deg,
-    hsl(325 50% 48%),
-    hsl(330 60% 28%)
+    hsl(325deg 50% 48%),
+    hsl(330deg 60% 28%)
   );
 
   --gradient-success-glass: linear-gradient(
     135deg,
     var(--color-success),
-    hsl(148 65% 68%)
+    hsl(148deg 65% 68%)
   );
 
   --gradient-danger-glass: linear-gradient(
     135deg,
     var(--color-error),
-    hsl(0 80% 75%)
+    hsl(0deg 80% 75%)
   );
 
   --gradient-liquid-glass: linear-gradient(
@@ -305,9 +305,9 @@
 
   --gradient-tropical-soft: linear-gradient(
     135deg,
-    hsl(325 90% 86%) 0%,
-    hsl(46 95% 86%) 50%,
-    hsl(158 80% 84%) 100%
+    hsl(325deg 90% 86%) 0%,
+    hsl(46deg 95% 86%) 50%,
+    hsl(158deg 80% 84%) 100%
   );
 
   --gradient-rose-water-soft: linear-gradient(
@@ -324,28 +324,28 @@
 
   --gradient-candy-soft: linear-gradient(
     45deg,
-    hsl(325 95% 88%) 0%,
-    hsl(342 90% 86%) 33%,
-    hsl(46 95% 86%) 66%,
-    hsl(325 95% 90%) 100%
+    hsl(325deg 95% 88%) 0%,
+    hsl(342deg 90% 86%) 33%,
+    hsl(46deg 95% 86%) 66%,
+    hsl(325deg 95% 90%) 100%
   );
 
   --gradient-velvet-soft: linear-gradient(
     135deg,
-    hsl(324 45% 76%),
-    hsl(330 40% 66%)
+    hsl(324deg 45% 76%),
+    hsl(330deg 40% 66%)
   );
 
   --gradient-success-glass-soft: linear-gradient(
     135deg,
-    hsl(148 55% 68%),
-    hsl(148 65% 84%)
+    hsl(148deg 55% 68%),
+    hsl(148deg 65% 84%)
   );
 
   --gradient-danger-glass-soft: linear-gradient(
     135deg,
-    hsl(0 70% 74%),
-    hsl(0 75% 88%)
+    hsl(0deg 70% 74%),
+    hsl(0deg 75% 88%)
   );
 
   --gradient-liquid-glass-soft: linear-gradient(
@@ -362,8 +362,8 @@
 
   --gradient-cyber-soft: linear-gradient(
     -45deg,
-    hsl(195 85% 85%),
-    hsl(210 85% 80%),
+    hsl(195deg 85% 85%),
+    hsl(210deg 85% 80%),
     var(--color-pink-soft)
   );
 

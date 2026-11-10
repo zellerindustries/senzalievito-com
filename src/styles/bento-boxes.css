@@ -63,18 +63,22 @@
   background: var(--color-pink);
   color: var(--color-text-inverse);
 }
+
 .box.yellow {
   background: var(--color-yellow);
-  color: hsl(35 40% 10%);
+  color: hsl(35deg 40% 10%);
 }
+
 .box.green {
   background: var(--color-green);
   color: var(--color-text);
 }
+
 .box.magenta {
   background: var(--color-magenta);
   color: #fff;
 }
+
 .box.rose-water {
   background: var(--color-pink-soft);
   color: var(--color-text);
@@ -112,7 +116,7 @@
     var(--color-yellow),
     var(--color-gold)
   );
-  color: hsl(35 40% 10%);
+  color: hsl(35deg 40% 10%);
 }
 
 .box.gradient-green {
@@ -126,9 +130,11 @@
 .box.gradient-tropical {
   background-image: var(--gradient-tropical);
 }
+
 .box.gradient-candy {
   background-image: var(--gradient-candy);
 }
+
 .box.gradient-velvet {
   background-image: var(--gradient-velvet);
 }
@@ -215,6 +221,7 @@
 .box.large .box-header {
   padding-top: var(--spacing-xl);
 }
+
 .box.large .box-footer {
   padding-bottom: var(--spacing-xl);
 }

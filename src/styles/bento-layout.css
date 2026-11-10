@@ -30,7 +30,8 @@
   flex-direction: column;
   min-width: 0;
   max-width: 100%;
-  word-break: break-word;
+  overflow-wrap: anywhere;
+  word-break: normal;
   height: 100%;
 }
 

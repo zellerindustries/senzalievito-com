@@ -18,6 +18,13 @@
   /* Rimosso overflow: hidden da qui per spostarlo in una logica desktop,
      altrimenti rompe il menu a schermo intero su mobile */
   z-index: 1000;
+
+  will-change: auto !important;
+  transform: none !important;
+  animation: none !important;
+  transition: none !important;
+  filter: none !important;
+  perspective: none !important;
 }
 
 #site-header #header-nav .btn {
@@ -48,12 +55,14 @@
   flex-grow: 1;
   justify-content: flex-end;
 }
+
 #site-header > a[aria-label^="Homepage"] {
   display: flex;
   align-items: center;
   align-self: stretch;
   height: 100%;
 }
+
 #site-logo {
   display: block;
   height: 100%;
@@ -95,6 +104,7 @@
     visibility 0.35s ease;
   z-index: 900;
 }
+
 #menu-overlay.is-active {
   opacity: 1;
   visibility: visible;
@@ -114,14 +124,6 @@ body.no-scroll {
   position: relative !important;
 }
 
-#site-header {
-  will-change: auto !important;
-  transform: none !important;
-  animation: none !important;
-  transition: none !important;
-  filter: none !important;
-  perspective: none !important;
-}
 #site-header:active,
 #site-header:hover {
   transform: none !important;
