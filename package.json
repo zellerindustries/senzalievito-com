@@ -21,7 +21,7 @@
   "license": "ISC",
   "type": "commonjs",
   "engines": {
-    "node": "24.x"
+    "node": "26.x"
   },
   "dependencies": {
     "@minimaz/sitekit": "^0.2.0",

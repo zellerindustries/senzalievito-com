@@ -4,7 +4,7 @@ Static Italian marketing site (`lang="it"`) for a digital strategy consultant, b
 
 ## Commands
 
-Requires Node `24.x` (`.nvmrc` / `package.json` engines; `.npmrc` sets `engine-strict=true`, so other
+Requires Node `26.x` (`.nvmrc` / `package.json` engines; `.npmrc` sets `engine-strict=true`, so other
 versions fail `npm install` outright).
 
 ```bash

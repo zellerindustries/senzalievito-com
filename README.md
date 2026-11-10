@@ -6,7 +6,7 @@ minified into static output with [`@minimaz/sitekit`](https://www.npmjs.com/pack
 
 ## Requirements
 
-- Node.js `24.x` (see `.nvmrc` / `engines` in `package.json`; `.npmrc` sets `engine-strict=true`)
+- Node.js `26.x` (see `.nvmrc` / `engines` in `package.json`; `.npmrc` sets `engine-strict=true`)
 
 ## Getting started
 
